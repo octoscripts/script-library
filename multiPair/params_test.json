@@ -1,0 +1,821 @@
+{
+  "testName": {
+    "val": "multiPair",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "multiPair",
+    "label": "Prefix for CSV filenames"
+  },
+  "testDescription": {
+    "val": "Run traffic using multiple Pal endpoints. Supports triband and bidirectional modes. Can use real AP or Pal as AP.",
+    "label": "Test Description"
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "stepDuration": {
+    "val": 10,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "QuadAttenDefaults": {
+    "val": "*****************************************",
+    "label": "QUAD ATTENUATOR DEFAULTS SECTION"
+  },
+  "quadAttenStart": {
+    "val": 0,
+    "label": "Quad attenuator starting value (dB)"
+  },
+  "quadAttenStop": {
+    "val": 80,
+    "label": "Quad attenuator stopping value (dB) [integer]"
+  },
+  "mpeBypass": {
+    "val": 63,
+    "label": "MPE value at which we switch from LOS to NLOS (dB) [integer]"
+  },
+  "step": {
+    "val": 20,
+    "label": "Quad attenuator step size (dB). Set = 1 for static attenution."
+  },
+  "attensToUse": {
+    "val": [
+      "QA-A",
+      "QA-B"
+    ],
+    "label": "Attenuators to ramp"
+  },
+  "settlingTime": {
+    "val": 2,
+    "label": "Settling Time (seconds)"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to wait before making measurement(sec) [integer]"
+  },
+  "testUses": {
+    "label": "Instruments required for this test. SD2 format DO NOT MODIFY!",
+    "val": []
+  },
+  "APsettings": {
+    "val": "*****************************************",
+    "label": "Access Point / DUT SECTION"
+  },
+  "palAsAP": {
+    "val": [
+      {
+        "value": "None",
+        "display": "None.  Use real AP.",
+        "selected": true
+      },
+      {
+        "value": "Pal-7C",
+        "display": "P7C",
+        "selected": false
+      }
+    ],
+    "label": "Pal to use as the AP",
+    "DOMtype": "dropdown"
+  },
+  "palAPbandConfig": {
+    "val": "BAND_TRI",
+    "label": "5 GHz band configuration"
+  },
+  "palAPssid": {
+    "val": "PAL-AP",
+    "label": "Pal AP SSID"
+  },
+  "palAPsecurity": {
+    "val": "SECURITY_WPA3",
+    "label": "Pal AP security"
+  },
+  "palAPpass": {
+    "val": "palAPkey",
+    "label": "Pal AP password"
+  },
+  "palAPchannel_24g": {
+    "val": 6,
+    "label": "2.4 GHz Channel for Pal AP. Set = 0 to disable radio."
+  },
+  "palAPchannel_5g": {
+    "val": 0,
+    "label": "5 GHz dual-band mode Channel for Pal AP. Set = 0 to disable radio."
+  },
+  "palAPchannel_5Ag": {
+    "val": 36,
+    "label": "5 GHz A tri-band mode Channel for Pal AP. Set = 0 to disable radio."
+  },
+  "palAPchannel_5Bg": {
+    "val": 161,
+    "label": "5 GHz B tri-band mode Channel for Pal AP. Set = 0 to disable radio."
+  },
+  "palAPchannel6g": {
+    "val": 0,
+    "label": "6 GHz Channel for Pal AP. Set = 0 to disable radio."
+  },
+  "PalStationsDefaults": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETER DEFAULTS SECTION"
+  },
+  "bw": {
+    "val": [
+      {
+        "value": "BANDWIDTH_ADAPT",
+        "display": "Adapt",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_20_FIXED",
+        "display": "20 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_40_ADAPT",
+        "display": "40 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_80_ADAPT",
+        "display": "80 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_160_ADAPT",
+        "display": "160 MHz",
+        "selected": true
+      },
+      {
+        "value": "BANDWIDTH_320_ADAPT",
+        "display": "320 MHz",
+        "selected": false
+      }
+    ],
+    "label": "Channel bandwidth",
+    "DOMtype": "dropdown"
+  },
+  "iface": {
+    "val": [
+      {
+        "value": "INTERFACE_N",
+        "display": "802.11n (Wi-Fi 4)",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AC",
+        "display": "802.11ac (Wi-Fi 5)",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AX",
+        "display": "802.11ax (Wi-Fi 6)",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_BE",
+        "display": "802.11be (Wi-Fi 7)",
+        "selected": true
+      }
+    ],
+    "label": "802.11 protocol version",
+    "DOMtype": "dropdown"
+  },
+  "nss": {
+    "val": [
+      {
+        "value": 1,
+        "display": "1 stream",
+        "selected": false
+      },
+      {
+        "value": 2,
+        "display": "2 streams",
+        "selected": true
+      },
+      {
+        "value": 3,
+        "display": "3 streams",
+        "selected": false
+      },
+      {
+        "value": 4,
+        "display": "4 streams",
+        "selected": false
+      },
+      {
+        "value": 5,
+        "display": "5 streams",
+        "selected": false
+      },
+      {
+        "value": 6,
+        "display": "6 streams",
+        "selected": false
+      },
+      {
+        "value": 7,
+        "display": "7 streams",
+        "selected": false
+      },
+      {
+        "value": 8,
+        "display": "8 streams",
+        "selected": false
+      }
+    ],
+    "label": "Number of spatial streams",
+    "DOMtype": "dropdown"
+  },
+  "palStations": {
+    "label": "List of Pals to configure as stations",
+    "val": [
+      {
+        "name": "L1C",
+        "band": "6g",
+        "type": "INTERFACE_BE",
+        "channel": 227,
+        "streams": 2,
+        "bandwidth": "160 MHz"
+      },
+      {
+        "name": "L2C",
+        "band": "6g",
+        "type": "INTERFACE_BE",
+        "channel": 227,
+        "streams": 2,
+        "bandwidth": "160 MHz"
+      },
+      {
+        "name": "L3C",
+        "band": "6g",
+        "type": "INTERFACE_BE",
+        "channel": 227,
+        "streams": 2,
+        "bandwidth": "160 MHz"
+      },
+      {
+        "name": "L4C",
+        "band": "6g",
+        "type": "INTERFACE_BE",
+        "channel": 227,
+        "streams": 2,
+        "bandwidth": "160 MHz"
+      },
+      {
+        "name": "L5C",
+        "band": "6g",
+        "type": "INTERFACE_BE",
+        "channel": 227,
+        "streams": 2,
+        "bandwidth": "160 MHz"
+      },
+      {
+        "name": "L2C",
+        "band": "6g",
+        "type": "INTERFACE_BE",
+        "channel": 227,
+        "streams": 2,
+        "bandwidth": "160 MHz"
+      },
+      {
+        "name": "L7C",
+        "band": "6g",
+        "type": "INTERFACE_BE",
+        "channel": 227,
+        "streams": 2,
+        "bandwidth": "160 MHz"
+      },
+      {
+        "name": "L8C",
+        "band": "6g",
+        "type": "INTERFACE_BE",
+        "channel": 227,
+        "streams": 2,
+        "bandwidth": "160 MHz"
+      },
+      {
+        "name": "L9C",
+        "band": "6g",
+        "type": "INTERFACE_BE",
+        "channel": 227,
+        "streams": 2,
+        "bandwidth": "160 MHz"
+      },
+      {
+        "name": "L10C",
+        "band": "6g",
+        "type": "INTERFACE_BE",
+        "channel": 227,
+        "streams": 2,
+        "bandwidth": "160 MHz"
+      },
+      {
+        "name": "L11C",
+        "band": "6g",
+        "type": "INTERFACE_BE",
+        "channel": 227,
+        "streams": 2,
+        "bandwidth": "160 MHz"
+      },
+      {
+        "name": "L12C",
+        "band": "6g",
+        "type": "INTERFACE_BE",
+        "channel": 227,
+        "streams": 2,
+        "bandwidth": "160 MHz"
+      },
+      {
+        "name": "L13C",
+        "band": "6g",
+        "type": "INTERFACE_BE",
+        "channel": 227,
+        "streams": 2,
+        "bandwidth": "160 MHz"
+      },
+      {
+        "name": "L14C",
+        "band": "6g",
+        "type": "INTERFACE_BE",
+        "channel": 227,
+        "streams": 2,
+        "bandwidth": "160 MHz"
+      },
+      {
+        "name": "L15C",
+        "band": "6g",
+        "type": "INTERFACE_BE",
+        "channel": 227,
+        "streams": 2,
+        "bandwidth": "160 MHz"
+      },
+      {
+        "name": "L16C",
+        "band": "6g",
+        "type": "INTERFACE_BE",
+        "channel": 227,
+        "streams": 2,
+        "bandwidth": "160 MHz"
+      }
+    ]
+  },
+  "TrafficPairDefaults": {
+    "val": "*****************************************",
+    "label": "TRAFFIC PAIR DEFAULTS SECTION"
+  },
+  "trafficType": {
+    "val": "iperf3",
+    "label": "Traffic type to run [iperf2 | iperf3 | ping | None]"
+  },
+  "trafficMode": {
+    "val": [
+      {
+        "value": "tcp",
+        "display": "TCP",
+        "selected": false
+      },
+      {
+        "value": "udp",
+        "display": "UDP",
+        "selected": true
+      },
+      {
+        "value": "ping",
+        "display": "Ping",
+        "selected": false
+      }
+    ],
+    "label": "Traffic type",
+    "DOMtype": "dropdown"
+  },
+  "pingInterval": {
+    "val": 200,
+    "label": "Number of milliseconds between pings"
+  },
+  "upOrDown": {
+    "val": [
+      {
+        "value": "up",
+        "display": "Uplink",
+        "selected": true
+      },
+      {
+        "value": "down",
+        "display": "Downlink",
+        "selected": false
+      }
+    ],
+    "label": "Traffic direction, uplink or downlink",
+    "DOMtype": "dropdown"
+  },
+  "trafficBW": {
+    "val": "300M",
+    "label": "Traffic bandwidth. Use K/M suffix; 0 for unlimited [string]."
+  },
+  "length": {
+    "val": "88",
+    "label": "Length field.  This is the packet size, in bytes, for UDP."
+  },
+  "parallel": {
+    "val": 1,
+    "label": "Number of parallel iPerf traffic streams. NOT the same as spatial streams for MIMO."
+  },
+  "window": {
+    "val": "4M",
+    "label": "Window size for iPerf in bytes.  Use #K or #M, like 2M for 2 MBytes."
+  },
+  "trafficAdvanced": {
+    "val": true,
+    "label": "Show advanced traffic pair parameters?"
+  },
+  "useNagles": {
+    "val": false,
+    "label": "Use Nagle's Algorithm? (A TCP optimization that makes the stack wait until all data is acknowledged on a connection before sending more data.)"
+  },
+  "setMss": {
+    "val": 0,
+    "label": "Maximum segment size"
+  },
+  "dscp": {
+    "val": 0,
+    "label": "DSCP"
+  },
+  "isochronous": {
+    "val": false,
+    "label": "Enable isochronous traffic, for iPerf2"
+  },
+  "iso_gap": {
+    "val": 0.005,
+    "label": "Isochronous, inter-packet gap"
+  },
+  "iso_mean": {
+    "val": 2,
+    "label": "Isochronous, mean"
+  },
+  "iso_mean_units": {
+    "label": "Units for isochronous, mean",
+    "val": [
+      {
+        "value": "M",
+        "display": "M",
+        "selected": true
+      },
+      {
+        "value": "K",
+        "display": "K",
+        "selected": false
+      },
+      {
+        "value": "G",
+        "display": "G",
+        "selected": false
+      },
+      {
+        "value": "m",
+        "display": "m",
+        "selected": false
+      },
+      {
+        "value": "k",
+        "display": "k",
+        "selected": false
+      },
+      {
+        "value": "g",
+        "display": "g",
+        "selected": false
+      },
+      {
+        "value": "p",
+        "display": "p",
+        "selected": false
+      }
+    ],
+    "DOMtype": "dropdown"
+  },
+  "iso_stdev": {
+    "val": "2M",
+    "label": "Isochronous, standard deviation"
+  },
+  "iso_fps": {
+    "val": 60,
+    "label": "Isochronous, frames per second"
+  },
+  "trafficPairs": {
+    "label": "List of traffic pairs to configure",
+    "val": [
+      {
+        "whichPal": "L1C",
+        "band": "6g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "udp",
+        "trafficRate": "300M",
+        "packetSize": "88",
+        "trafficStreams": "1",
+        "windowSize": "4M",
+        "pingInterval": "64",
+        "advanced": true,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "whichPal": "L2C",
+        "band": "6g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "udp",
+        "trafficRate": "300M",
+        "packetSize": "88",
+        "trafficStreams": "1",
+        "windowSize": "4M",
+        "pingInterval": "64",
+        "advanced": true,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "whichPal": "L3C",
+        "band": "6g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "udp",
+        "trafficRate": "300M",
+        "packetSize": "88",
+        "trafficStreams": "1",
+        "windowSize": "4M",
+        "pingInterval": "64",
+        "advanced": true,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "whichPal": "L4C",
+        "band": "6g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "udp",
+        "trafficRate": "300M",
+        "packetSize": "88",
+        "trafficStreams": "1",
+        "windowSize": "4M",
+        "pingInterval": "64",
+        "advanced": true,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "whichPal": "L5C",
+        "band": "6g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "udp",
+        "trafficRate": "300M",
+        "packetSize": "88",
+        "trafficStreams": "1",
+        "windowSize": "4M",
+        "pingInterval": "64",
+        "advanced": true,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "whichPal": "L6C",
+        "band": "6g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "udp",
+        "trafficRate": "300M",
+        "packetSize": "88",
+        "trafficStreams": "1",
+        "windowSize": "4M",
+        "pingInterval": "64",
+        "advanced": true,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "whichPal": "L7C",
+        "band": "6g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "udp",
+        "trafficRate": "300M",
+        "packetSize": "88",
+        "trafficStreams": "1",
+        "windowSize": "4M",
+        "pingInterval": "64",
+        "advanced": true,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "whichPal": "L8C",
+        "band": "6g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "udp",
+        "trafficRate": "300M",
+        "packetSize": "88",
+        "trafficStreams": "1",
+        "windowSize": "4M",
+        "pingInterval": "64",
+        "advanced": true,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "whichPal": "L9C",
+        "band": "6g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "udp",
+        "trafficRate": "300M",
+        "packetSize": "88",
+        "trafficStreams": "1",
+        "windowSize": "4M",
+        "pingInterval": "64",
+        "advanced": true,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "whichPal": "L10C",
+        "band": "6g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "udp",
+        "trafficRate": "300M",
+        "packetSize": "88",
+        "trafficStreams": "1",
+        "windowSize": "4M",
+        "pingInterval": "64",
+        "advanced": true,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "whichPal": "L11C",
+        "band": "6g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "udp",
+        "trafficRate": "300M",
+        "packetSize": "88",
+        "trafficStreams": "1",
+        "windowSize": "4M",
+        "pingInterval": "64",
+        "advanced": true,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "whichPal": "L12C",
+        "band": "6g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "udp",
+        "trafficRate": "300M",
+        "packetSize": "88",
+        "trafficStreams": "1",
+        "windowSize": "4M",
+        "pingInterval": "64",
+        "advanced": true,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "whichPal": "L13C",
+        "band": "6g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "udp",
+        "trafficRate": "300M",
+        "packetSize": "88",
+        "trafficStreams": "1",
+        "windowSize": "4M",
+        "pingInterval": "64",
+        "advanced": true,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "whichPal": "L14C",
+        "band": "6g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "udp",
+        "trafficRate": "300M",
+        "packetSize": "88",
+        "trafficStreams": "1",
+        "windowSize": "4M",
+        "pingInterval": "64",
+        "advanced": true,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "whichPal": "L15C",
+        "band": "6g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "udp",
+        "trafficRate": "300M",
+        "packetSize": "88",
+        "trafficStreams": "1",
+        "windowSize": "4M",
+        "pingInterval": "64",
+        "advanced": true,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "whichPal": "L16C",
+        "band": "6g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "udp",
+        "trafficRate": "300M",
+        "packetSize": "88",
+        "trafficStreams": "1",
+        "windowSize": "4M",
+        "pingInterval": "64",
+        "advanced": true,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      }
+    ]
+  },
+  "OTHERPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ANY OTHER ITEM CONFIGURATION SECTION"
+  },
+  "rest_timeout": {
+    "val": 120,
+    "label": "Maximum wait for REST API call to respond. Integer seconds."
+  }
+}

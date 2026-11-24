@@ -1,0 +1,229 @@
+{
+  "testName": {
+    "val": "CustomChartsExample",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "CustomChartsExample",
+    "label": "Prefix for CSV filenames"
+  },
+  "testDescription": {
+    "val": "Use the new External Statistics Interface to get external data and include it into the test record.",
+    "label": "Test Description"
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "stepDuration": {
+    "val": 20,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "quadAttenStart": {
+    "val": 0,
+    "label": "Quad attenuator starting value (dB)"
+  },
+  "quadAttenStop": {
+    "val": 50,
+    "label": "Quad attenuator stopping value (dB) [integer]"
+  },
+  "step": {
+    "val": 10,
+    "label": "Quad attenuator step size (dB). Set = 1 for static attenution."
+  },
+  "settlingTime": {
+    "val": 2,
+    "label": "Settling Time (seconds)"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to wait before making measurement(sec) [integer]"
+  },
+  "palToUseSTA": {
+    "val": [
+      {
+        "value": "Pal-6C",
+        "display": "Pal6 in Box C",
+        "selected": false
+      },
+      {
+        "value": "L2C-STApal",
+        "display": "L2C-STApal",
+        "selected": true
+      },
+      {
+        "value": "L3C-STApal",
+        "display": "L3C-STApal",
+        "selected": false
+      },
+      {
+        "value": "L4C-STApal",
+        "display": "L4C-STApal",
+        "selected": false
+      },
+      {
+        "value": "L5C-STApal",
+        "display": "L5C-STApal",
+        "selected": false
+      },
+      {
+        "value": "L6C-STApal",
+        "display": "L6C-STApal",
+        "selected": false
+      },
+      {
+        "value": "L7C-STApal",
+        "display": "L7C-STApal",
+        "selected": false
+      },
+      {
+        "value": "L10C-STApal",
+        "display": "L10C-STApal",
+        "selected": false
+      },
+      {
+        "value": "L11C-STApal",
+        "display": "L11C-STApal",
+        "selected": false
+      },
+      {
+        "value": "L12C-STApal",
+        "display": "L12C-STApal",
+        "selected": false
+      },
+      {
+        "value": "L13C-STApal",
+        "display": "L13C-STApal",
+        "selected": false
+      },
+      {
+        "value": "L14C-STApal",
+        "display": "L14C-STApal",
+        "selected": false
+      },
+      {
+        "value": "L15C-STApal",
+        "display": "L15C-STApal",
+        "selected": false
+      }
+    ],
+    "label": "Name of device to use for test STA.",
+    "DOMtype": "dropdown"
+  },
+  "testUses": {
+    "label": "Instruments required for this test. SD2 format DO NOT MODIFY!",
+    "val": []
+  },
+  "iperfMode": {
+    "label": "iPerf Mode (tcp, udp)",
+    "val": "tcp"
+  },
+  "trafficType": {
+    "val": "iperf3",
+    "label": "Traffic type to run [iperf2 | iperf3 | ping | None]"
+  },
+  "trafficBW": {
+    "val": "0M",
+    "label": "Bit rate.  Use #K or #M, like 20M for 20 Mbps"
+  },
+  "length": {
+    "val": "",
+    "label": "Packet size, bytes"
+  },
+  "parallel": {
+    "val": "4",
+    "label": "Parallel streams"
+  },
+  "window": {
+    "val": "4M",
+    "label": "Window size"
+  },
+  "direction": {
+    "val": [
+      {
+        "value": "up",
+        "display": "Uplink",
+        "selected": false
+      },
+      {
+        "value": "dn",
+        "display": "Downlink",
+        "selected": true
+      }
+    ],
+    "label": "Traffic direction",
+    "DOMtype": "dropdown"
+  },
+  "OTHERPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ANY OTHER ITEM CONFIGURATION SECTION"
+  },
+  "primaryChannel": {
+    "val": 36,
+    "label": "Channel of operation"
+  },
+  "bw": {
+    "val": [
+      {
+        "value": "BANDWIDTH_ADAPT",
+        "display": "Adapt",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_20_FIXED",
+        "display": "20 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_40_ADAPT",
+        "display": "40 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_80_ADAPT",
+        "display": "80 MHz",
+        "selected": true
+      },
+      {
+        "value": "BANDWIDTH_160_ADAPT",
+        "display": "160 MHz",
+        "selected": false
+      }
+    ],
+    "label": "Channel bandwidth",
+    "DOMtype": "dropdown"
+  },
+  "interface": {
+    "val": [
+      {
+        "value": "INTERFACE_N",
+        "display": "11n",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AC",
+        "display": "11ac",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AX",
+        "display": "11ax",
+        "selected": true
+      }
+    ],
+    "label": "Interface",
+    "DOMtype": "dropdown"
+  },
+  "pluginPath": {
+    "val": "/home/octoscope/Documents/script-home/plugins/",
+    "label": "The location on the server where the external data extraction script should be placed"
+  },
+  "pluginName": {
+    "val": "getPalData.py",
+    "label": "The name to give to the external data extraction script on the server"
+  },
+  "localPluginFile": {
+    "val": "getDataStream.py",
+    "label": "The name of the local file to place into the above pluginPath/pluginName location on the server"
+  }
+}

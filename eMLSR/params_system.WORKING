@@ -1,0 +1,518 @@
+{
+  "paramsFileType": {
+    "val": "system",
+    "label": "Params file type [system|test|limits]"
+  },
+  "blockNormal": {
+    "setDetailLevel": 1,
+    "setReadOnly": false
+  },
+  "dut": {
+    "label": "DUT parameters. **NOTE** EDIT to match device under test.",
+    "val": {
+      "dutModel": "eero Pro 6E",
+      "dutId": "eero_pro6e",
+      "dutRevision": "V6.16.2-88",
+      "apnum": 3,
+      "dut_mgmtip": "192.168.4.1",
+      "dut_subnet": "255.255.0.0",
+      "dutssid24": "eero",
+      "dutpass24": "erro1234",
+      "dutsecurity24": "SECURITY_WPA2",
+      "dutssid5": "eero",
+      "dutpass5": "erro1234",
+      "dutsecurity5": "SECURITY_WPA2",
+      "dutssid5_2": "eero",
+      "dutpass5_2": "erro1234",
+      "dutsecurity5_2": "SECURITY_WPA2",
+      "dutssid6": "eero",
+      "dutpass6": "erro1234",
+      "dutsecurity6": "SECURITY_WPA3"
+    }
+  },
+  "debug": {
+    "val": false,
+    "label": "Set true to enable extra debug info for some tests"
+  },
+  "backhaul_root_extender1": {
+    "val": 20,
+    "label": "Attenuation value for Root to Extender1 path (default 20)"
+  },
+  "backhaul_extender1_extender2": {
+    "val": 20,
+    "label": "Attenuation value for Extender1 to Extender 2 path (default 20)"
+  },
+  "backhaul_root_extender2": {
+    "val": 90,
+    "label": "Attenuation value for Root to Extender2 path (default 90)"
+  },
+  "oBox_server": {
+    "label": "octoBox Server params. **NOTE** EDIT publicip to equal the IP address of your octobox system.",
+    "val": {
+      "publicip": "10.100.101.129"
+    }
+  },
+  "stackTypeOverride": {
+    "val": "stack-max-snb",
+    "label": "This value overrides the systemConfig stackType value when looking up box-to-box path info in pathinfo.json. Leave it blank to use the value in systemConfig. **IMPORTANT** The value must be a valid dictionary in pathinfo.json. This should be used only if a system has a non-standard attenuator configuration."
+  },
+  "autotest_timeout_factor": {
+    "val": 1.8,
+    "label": "Calculated step duration is multipled by this to set test timeout check."
+  },
+  "rest_timeout": {
+    "val": 120,
+    "label": "Maximum wait for REST API call to respond. Integer seconds."
+  },
+  "retryRequests": {
+    "val": false,
+    "label": "Set true to retry makeArequest requests."
+  },
+  "skipIgenCheck": {
+    "val": true,
+    "label": "Set true to skip checking & resetting iGen."
+  },
+  "blockHide": {
+    "setDetailLevel": 2,
+    "setReadOnly": false
+  },
+  "WAITPARAMETERS": {
+    "val": "*****************************************",
+    "label": "THESE ARE USED BY MANY SCRIPTS, SO BE CAREFUL WHEN CHANGING."
+  },
+  "meshSetupTime": {
+    "val": 5,
+    "label": "Wait time after initializing mesh backhaul attenuators for mesh to establish"
+  },
+  "defaultSettlingTime": {
+    "val": 5,
+    "label": "Time to wait before making measurement(sec) [integer]"
+  },
+  "delay_after_capture_stop": {
+    "val": 5,
+    "label": "Time (seconds) to wait after stopping sniffer capture."
+  },
+  "ping_wait_time_seconds": {
+    "val": 5,
+    "label": "Wait seconds for ping to succeed"
+  },
+  "delay_before_traffic_seconds": {
+    "val": 5,
+    "label": "Wait seconds before traffic start"
+  },
+  "delay_before_test_status_check": {
+    "val": 3,
+    "label": "Wait seconds before checking test  status"
+  },
+  "atten_change_delay_seconds": {
+    "val": 1,
+    "label": "Wait seconds after attenuator change"
+  },
+  "avgData_delay_seconds": {
+    "val": 3,
+    "label": "Wait seconds before calling avgData API"
+  },
+  "blockLock": {
+    "setDetailLevel": 5,
+    "setReadOnly": false
+  },
+  "SCRIPT_AUTOCONFIGURE_PARAMETERS": {
+    "val": "*****************************************",
+    "label": "THESE PARAMETERS CONTROL HOW SCRIPTS SELF CONFIGURE FOR DIFFERENT STACKS."
+  },
+  "funcsCanTerminate": {
+    "val": true,
+    "label": "Set true to allow sd2Utils functions to terminate script on error."
+  },
+  "useHelper": {
+    "val": false,
+    "label": "Set true to have script(s) use Helper file."
+  },
+  "useDutMap": {
+    "val": false,
+    "label": "Set true to have script(s) use dutMap.json."
+  },
+  "usePathInfo": {
+    "val": false,
+    "label": "Set true to have script(s) use pathinfo.json."
+  },
+  "softwareVersionRequired": {
+    "val": "2.8.0-6",
+    "label": "Minimum system software version required."
+  },
+  "sd2UtilsVersionRequired": {
+    "val": "20241008",
+    "label": "Minimum sd2Utils version required."
+  },
+  "scriptSuiteVersion": {
+    "val": "",
+    "label": "Script suite version."
+  },
+  "FILE-LOCATION_N_PATH_PARAMETERS": {
+    "val": "*****************************************",
+    "label": "CHANGE ONLY IF YOU KNOW WHAT YOU ARE DOING AND FILES ARE MOVED FROM THESE LOCATIONS."
+  },
+  "dutMapPath": {
+    "val": "../dutMap.json",
+    "label": "Path to dutMap.json file."
+  },
+  "meshinfoPath": {
+    "val": "../",
+    "label": "Path to meshinfo.json file."
+  },
+  "calfilePath": {
+    "val": "/octoscope/scriptMachine/script-home/common/calibration/",
+    "label": "Path to calfile.json file."
+  },
+  "80211_keysFilePath": {
+    "val": "/home/octoscope/.config/wireshark/80211_keys",
+    "label": "Path to 80211_keys file for wireshark."
+  },
+  "expertAnalysis_server": {
+    "label": "Expert Analysis server params",
+    "val": {
+      "dirpath": "/octoscope/analytics",
+      "filename": "expertAnalysisServer.js",
+      "address": "localhost",
+      "mgmtport": "8080"
+    }
+  },
+  "eaLocation": {
+    "val": [
+      {
+        "value": "remote",
+        "display": "Remote",
+        "selected": false
+      },
+      {
+        "value": "local",
+        "display": "Local",
+        "selected": true
+      }
+    ],
+    "label": "Expert Analysis location (remote or local)",
+    "DOMtype": "dropdown"
+  },
+  "SnifferRelay_location": {
+    "label": "Sniffer node server path",
+    "val": {
+      "dirpath": "/octoscope/scriptMachine/script-home/common/",
+      "filename": "SnifferRelay.js"
+    }
+  },
+  "basicServer_location": {
+    "label": "Full path to basic-server directory on octobox server.",
+    "val": {
+      "dirpath": "/octoscope/scriptMachine/script-manager/basic-server/",
+      "filename": "basic-server.js",
+      "mgmtport": "8383"
+    }
+  },
+  "HOUSE_PROFILE_CONVERSION_PARAMETERS": {
+    "val": "*****************************************",
+    "label": "CHANGE ONLY IF YOU KNOW WHAT YOU ARE DOING."
+  },
+  "houseProfile_channel": {
+    "val": 44,
+    "label": "Channel for houseProfile rssi to attenuator conversion. (Default 44)"
+  },
+  "houseProfile_xmitPower": {
+    "val": 20,
+    "label": "DUT transmit powerfor houseProfile rssi to attenuator conversion. (Default 20)"
+  },
+  "PAL-STAPAL_PARAMETERS": {
+    "val": "*****************************************",
+    "label": "THESE VALUES ARE USED AS DEFAULT VALUES. CHANGE ONLY IF YOU KNOW WHAT YOU ARE DOING."
+  },
+  "pal6_STA": {
+    "label": "Pal6 STA default configuration.",
+    "val": {
+      "managementAddr": "SET_THIS",
+      "request": "Push",
+      "advRatesEnable": false,
+      "alias": "SET_THIS",
+      "apStaMode": "STA",
+      "bandConfig": "BAND_DUAL",
+      "bandwidth": "SET_THIS",
+      "beamformeeMUEnable": "SET_THIS_true_false",
+      "beamformeeSUEnable": "SET_THIS_true_false",
+      "beamformerMUEnable": false,
+      "beamformerSUEnable": false,
+      "bridgeEnable": false,
+      "bssid": "",
+      "bssidMode": "BSSID_UNKNOWN",
+      "interface_": "SET_THIS",
+      "ipAddress": "SET_THIS",
+      "ipGateway": "SET_THIS",
+      "ipMode": "IP_STATIC",
+      "ipNetmask": "255.255.0.0",
+      "ofdmaDLEnable": "SET_THIS_true_false",
+      "ofdmaULEnable": "SET_THIS_true_false",
+      "palRadio": "SET_THIS",
+      "password": "SET_THIS",
+      "primaryChannel": "SET_THIS",
+      "priority": "PRIORITY_BESTEFFORT",
+      "radioEnabled": true,
+      "rate": -1,
+      "roamTargetThreshold": -95,
+      "roamThreshold": -95,
+      "secondaryChannel_8080": 0,
+      "security": "SET_THIS",
+      "ssid": "SET_THIS",
+      "streams": 4,
+      "txAtten": 0,
+      "uApsdEnable": true,
+      "vEnable": false,
+      "vLogging": false,
+      "vstaCount": 1,
+      "vstaConfig": []
+    }
+  },
+  "pal7_STA": {
+    "label": "Pal7 STA default configuration",
+    "val": {
+      "apStaMode": "STA",
+      "managementAddr": "SET_THIS",
+      "alias": "SET_THIS",
+      "request": "Push",
+      "bandwidth": "SET_THIS",
+      "ipAddress": "SET_THIS",
+      "ipGateway": "SET_THIS",
+      "ipMode": "IP_STATIC",
+      "ipNetmask": "255.255.0.0",
+      "ipv6Mode": "IP_STATIC",
+      "ipv6ModeBridge": "IP_STATIC",
+      "ipv6PrefixLength": 64,
+      "ipv6PrefixLengthBridge": 64,
+      "primaryChannel": "SET_THIS",
+      "priority": "PRIORITY_BESTEFFORT",
+      "rate": -1,
+      "security": "SET_THIS",
+      "ssid": "SET_THIS",
+      "streams": 4,
+      "advRatesEnable": false,
+      "beamformeeMUEnable": "SET_THIS_true_false",
+      "beamformeeSUEnable": "SET_THIS_true_false",
+      "beamformerMUEnable": false,
+      "beamformerSUEnable": false,
+      "bridgeEnable": false,
+      "countryCode": "",
+      "ofdmaDLEnable": "SET_THIS_true_false",
+      "ofdmaULEnable": "SET_THIS_true_false",
+      "okcEnable": false,
+      "password": "SET_THIS",
+      "txAtten": 0,
+      "kEnable": false,
+      "kvrLoggingEnable": false,
+      "rFastTransitionEnable": false,
+      "rOvertheDSEnable": false,
+      "vEnable": false,
+      "mloMemberEnable": false,
+	"mloMemberIndex": 0,
+	"palRadio": "SET_THIS",
+      "vstaCount": 1,
+      "bssid": "",
+      "bssidMode": "BSSID_UNKNOWN",
+      "certFilename": "",
+      "powerSaveEnable": false,
+      "radiusIdentity": "",
+      "radiusPassword": "",
+      "vstaConfig": [],
+      "radioEnabled": true,
+      "interface_": "SET_THIS",
+      "secondaryChannel_8080": 0
+    }
+  },
+  "STApal": {
+    "label": "STApal default configuration.",
+    "val": {
+      "managementAddr": "SET_THIS",
+      "request": "Push",
+      "advRatesEnable": false,
+      "alias": "",
+      "apStaMode": "STA",
+      "bandwidth": "SET_THIS",
+      "beamformeeMUEnable": true,
+      "beamformeeSUEnable": true,
+      "beamformerMUEnable": false,
+      "beamformerSUEnable": false,
+      "bridgeEnable": false,
+      "bssid": "",
+      "bssidMode": "BSSID_DISABLED",
+      "captureEnable": false,
+      "channelScanList": [],
+      "channelScanMode": false,
+      "ctsRtsThreshold": 0,
+      "dfsEnable": false,
+      "filterManagementOnly": false,
+      "filterHeadersOnly": false,
+      "fragmentationThreshold": 2346,
+      "guardInterval": "GUARD_0_4US",
+      "interface_": "SET_THIS",
+      "ipAddress": "SET_THIS",
+      "ipAddressBridge": "",
+      "ipGateway": "SET_THIS",
+      "ipGatewayBridge": "",
+      "ipMode": "IP_STATIC",
+      "ipModeBridge": "IP_STATIC",
+      "ipNetmask": "255.255.0.0",
+      "ipNetmaskBridge": "255.255.0.0",
+      "kEnable": false,
+      "kvrLoggingEnable": false,
+      "maxAMPDUFrameSize": "FRAME_UNKNOWN",
+      "netcatPort": 10000,
+      "ofdmaDLEnable": true,
+      "ofdmaULEnable": true,
+      "palRadio": "SET_THIS",
+      "powerSaveEnable": false,
+      "primaryChannel": "SET_THIS",
+      "priority": "PRIORITY_BESTEFFORT",
+      "probeID": "STApal-Probe",
+      "radioEnabled": true,
+      "rate": -1,
+      "rFastTransitionEnable": false,
+      "roamTargetThreshold": -95,
+      "roamThreshold": -95,
+      "rOvertheDSEnable": false,
+      "secondaryChannel_8080": 0,
+      "security": "SET_THIS",
+      "password": "SET_THIS",
+      "ssid": "SET_THIS",
+      "streams": 2,
+      "txAtten": 0,
+      "vEnable": false,
+      "vstaCount": 1,
+      "vstaConfig": []
+    }
+  },
+  "STApalSniffer": {
+    "label": "STApal sniffer default configuration",
+    "val": {
+      "palAddress": "SET_THIS",
+      "apStaMode": "SNIFFER",
+      "devType": "staPal",
+      "palRadio": "SET_THIS",
+      "bandwidth": "SET_THIS",
+      "chainMask": 255,
+      "filterHeadersOnly": true,
+      "filterManagementOnly": false,
+      "interface": "SET_THIS",
+      "netcatPort": 10011,
+      "primaryChannel": "SET_THIS",
+      "probeID": "SET_THIS",
+      "secondaryChannel_8080": 0,
+      "triggerOutMode": "TMODE_DISABLE",
+      "triggerOutPacketFilterMask": 0,
+      "radioEnabled": true,
+      "triggerOutScriptCmd": "python3/octoscope/delay_gpio.py"
+    }
+  },
+  "pal6_AP": {
+    "label": "Pal6 AP default configuration",
+    "val": {
+      "managementAddr": "SET_THIS",
+      "request": "Push",
+      "apStaMode": "AP",
+      "bandConfig": "BAND_DUAL",
+      "alias": "SET_THIS",
+      "beaconInterval": 0,
+      "probeID": "Pal6-Probe",
+      "captureEnable": false,
+      "filterExpression": "",
+      "filterHeadersOnly": false,
+      "filterManagementOnly": false,
+      "bandwidth": "SET_THIS",
+      "guardInterval": "GUARD_0_8US",
+      "bridgeEnable": true,
+      "ipAddress": "SET_THIS",
+      "ipNetmask": "255.255.0.0",
+      "ipMode": "IP_STATIC",
+      "ipGateway": "",
+      "ipAddressBridge": "SET_THIS",
+      "ipNetmaskBridge": "255.255.0.0",
+      "ipModeBridge": "IP_STATIC",
+      "ipGatewayBridge": "",
+      "primaryChannel": "SET_THIS",
+      "priority": "PRIORITY_BESTEFFORT",
+      "rate": -1,
+      "security": "SET_THIS",
+      "ssid": "SET_THIS",
+      "streams": 4,
+      "advRatesEnable": false,
+      "beamformeeMUEnable": false,
+      "beamformeeSUEnable": false,
+      "beamformerMUEnable": true,
+      "beamformerSUEnable": true,
+      "ctsRtsThreshold": 0,
+      "dfsEnable": false,
+      "ofdmaDLEnable": true,
+      "ofdmaULEnable": true,
+      "password": "SET_THIS",
+      "txAtten": 0,
+      "kEnable": false,
+      "kvrLoggingEnable": false,
+      "rFastTransitionEnable": false,
+      "rOvertheDSEnable": false,
+      "vEnable": false,
+      "palRadio": "SET_THIS",
+      "radioEnabled": true
+    }
+  },
+  "pal7_AP": {
+    "label": "Pal7 AP default configuration",
+    "val": {
+      "managementAddr": "SET_THIS",
+      "request": "Push",
+      "apStaMode": "AP",
+      "alias": "Pal-7A_24",
+      "vstaConfig": [],
+      "twtEnable": true,
+      "beaconInterval": 0,
+      "uApsdDtimInterval": 0,
+      "uApsdEnable": false,
+      "authServerIp": "",
+      "authServerPort": 0,
+      "authServerSecret": "",
+      "bandwidth": "SET_THIS",
+      "beamformerMUEnable": true,
+      "beamformerSUEnable": true,
+      "bridgeEnable": true,
+      "guardInterval": "GUARD_0_8US",
+      "ipAddress": "SET_THIS",
+      "ipMode": "IP_STATIC",
+      "ipNetmask": "255.255.0.0",
+      "ipAddressBridge": "SET_THIS",
+      "ipModeBridge": "IP_STATIC",
+      "ipNetmaskBridge": "255.255.0.0",
+      "ofdmaDLEnable": true,
+      "ofdmaULEnable": true,
+      "password": "SET_THIS",
+      "primaryChannel": "SET_THIS",
+      "priority": "PRIORITY_BESTEFFORT",
+      "rate": -1,
+      "security": "SET_THIS",
+      "ssid": "SET_THIS",
+      "streams": 4,
+      "advRatesEnable": false,
+      "beamformeeMUEnable": false,
+      "beamformeeSUEnable": false,
+      "countryCode": "",
+      "ctsRtsThreshold": 0,
+      "dfsEnable": false,
+      "maxAMPDUFrameSize": "FRAME_UNKNOWN",
+      "okcEnable": false,
+      "punctureChannels": "",
+      "punctureStrict": false,
+      "txAtten": 0,
+      "kEnable": false,
+      "kvrLoggingEnable": false,
+      "rFastTransitionEnable": false,
+      "rOvertheDSEnable": false,
+      "vEnable": false,
+      "mloMemberEnable": false,
+      "palRadio": "SET_THIS",
+      "radioEnabled": true,
+      "interface_": "SET_THIS"
+    }
+  }
+}

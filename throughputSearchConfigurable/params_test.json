@@ -1,0 +1,432 @@
+{
+  "testName": {
+    "val": "throughputSearchConfigurable",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "throughputSearchConfigurable",
+    "label": "Prefix for CSV filenames"
+  },
+  "testDescription": {
+    "val": "Do a search (usually binary) to find throughput under various conditions",
+    "label": "Test Description"
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "settlingTime": {
+    "val": 2,
+    "label": "Time to ignore test data at the beginning of test. (sec) [integer]"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to ignore test data at start of each attenuator step. (sec) [integer]"
+  },
+  "stepDuration": {
+    "val": 45,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "quadAttenValue": {
+    "val": 0,
+    "label": "Quad attenuator setting (dB)"
+  },
+  "step": {
+    "val": 1,
+    "label": "Quad attenuator step size (dB)"
+  },
+  "attensToUse": {
+    "val": [
+      "QA-A",
+      "QA-B"
+    ],
+    "label": "Attenuators to set"
+  },
+  "palToUse": {
+    "val": [
+      {
+        "value": "Pal-6B",
+        "display": "Pal-6B",
+        "selected": false
+      },
+      {
+        "value": "P7C",
+        "display": "Pal-7C",
+        "selected": true
+      },
+      {
+        "value": "Pal-6D",
+        "display": "Pal-6D",
+        "selected": false
+      },
+      {
+        "value": "iperf2",
+        "display": "iPerf2",
+        "selected": false
+      },
+      {
+        "value": "iperf3",
+        "display": "iPerf3",
+        "selected": false
+      },
+      {
+        "value": "multiperf",
+        "display": "multiPerf",
+        "selected": false
+      }
+    ],
+    "label": "Pal/STApal to use for test",
+    "DOMtype": "dropdown"
+  },
+  "customIP": {
+    "val": "192.168.80.27",
+    "label": "IP address to use if iPerf client"
+  },
+  "customPort": {
+    "val": "5111",
+    "label": "Port to use if iPerf client"
+  },
+  "customAlias": {
+    "val": "L3C_iperf2",
+    "label": "Alias to use if iPerf client"
+  },
+  "testUses": {
+    "label": "Instruments required for this test. SD2 format",
+    "val": []
+  },
+  "ENDPOINTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ENDPOINT CONFIGURATION SECTION"
+  },
+  "band": {
+    "val": [
+      {
+        "value": "24g",
+        "display": "2.4 GHz",
+        "selected": false
+      },
+      {
+        "value": "5g",
+        "display": "5 GHz",
+        "selected": false
+      },
+      {
+        "value": "6g",
+        "display": "6 GHz",
+        "selected": true
+      }
+    ],
+    "label": "Frequency band",
+    "DOMtype": "dropdown"
+  },
+  "primaryChannel": {
+    "val": 227,
+    "label": "Channel of operation"
+  },
+  "bw": {
+    "val": [
+      {
+        "value": "20 MHz",
+        "display": "20 MHz",
+        "selected": false
+      },
+      {
+        "value": "40 MHz",
+        "display": "40 MHz",
+        "selected": false
+      },
+      {
+        "value": "80 MHz",
+        "display": "80 MHz",
+        "selected": false
+      },
+      {
+        "value": "160 MHz",
+        "display": "160 MHz",
+        "selected": true
+      },
+      {
+        "value": "320 MHz",
+        "display": "320 MHz",
+        "selected": false
+      }
+    ],
+    "label": "Channel bandwidth",
+    "DOMtype": "dropdown"
+  },
+  "iface": {
+    "val": [
+      {
+        "value": "11n",
+        "display": "802.11n (Wi-Fi 4)",
+        "selected": false
+      },
+      {
+        "value": "11ac",
+        "display": "802.11ac (Wi-Fi 5)",
+        "selected": false
+      },
+      {
+        "value": "11ax",
+        "display": "802.11ax (Wi-Fi 6)",
+        "selected": true
+      },
+      {
+        "value": "11be",
+        "display": "802.11be (Wi-Fi 7)",
+        "selected": false
+      }
+    ],
+    "label": "802.11 protocol version",
+    "DOMtype": "dropdown"
+  },
+  "nss": {
+    "val": [
+      {
+        "value": "1",
+        "display": "1 stream",
+        "selected": false
+      },
+      {
+        "value": "2",
+        "display": "2 streams",
+        "selected": true
+      },
+      {
+        "value": "3",
+        "display": "3 streams",
+        "selected": false
+      },
+      {
+        "value": "4",
+        "display": "4 streams",
+        "selected": false
+      },
+      {
+        "value": "5",
+        "display": "5 streams",
+        "selected": false
+      },
+      {
+        "value": "6",
+        "display": "6 streams",
+        "selected": false
+      },
+      {
+        "value": "7",
+        "display": "7 streams",
+        "selected": false
+      },
+      {
+        "value": "8",
+        "display": "8 streams",
+        "selected": false
+      }
+    ],
+    "label": "Number of spatial streams",
+    "DOMtype": "dropdown"
+  },
+  "txAtten": {
+    "val": 0,
+    "label": "Tx Attenuation (dB)"
+  },
+  "TRAFFICPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TRAFFIC PAIR CONFIGURATION SECTION"
+  },
+  "trafficType": {
+    "val": "iperf3",
+    "label": "Traffic type to run [iperf2 | iperf3 | ping | None]"
+  },
+  "doTCP": {
+    "val": false,
+    "label": "Forwarding rate using TCP"
+  },
+  "doUDP": {
+    "val": true,
+    "label": "Throughput search using UDP"
+  },
+  "trafficBW": {
+    "val": "6000M",
+    "label": "Traffic bandwidth. Use K/M suffix; 0 for unlimited [string].  TCP mode will always do 0M."
+  },
+  "length": {
+    "val": "",
+    "label": "Length field.  This is the packet size, in bytes, for UDP."
+  },
+  "packetSizes": {
+    "val": [
+      88,
+      512,
+      1400
+    ],
+    "label": "Run the test over a variety of packet sizes"
+  },
+  "MSSes": {
+    "val": [
+      0
+    ],
+    "label": "Run the test over a variety of MSS sizes"
+  },
+  "doUplink": {
+    "val": false,
+    "label": "Run uplink traffic"
+  },
+  "doDownlink": {
+    "val": true,
+    "label": "Run downnlink traffic"
+  },
+  "doBidirectional": {
+    "val": false,
+    "label": "Run bidirectional traffic"
+  },
+  "parallel": {
+    "val": 1,
+    "label": "Number of parallel iPerf traffic streams. NOT the same as spatial streams for MIMO."
+  },
+  "window": {
+    "val": "4M",
+    "label": "Window size for iPerf in bytes.  Use #K or #M, like 2M for 2 MBytes."
+  },
+  "OTHERPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ANY OTHER ITEM CONFIGURATION SECTION"
+  },
+  "thresholdPercent": {
+    "val": 2,
+    "label": "Threshold for packet loss percentage.  I.e., at what packet loss can you stop the search.  5 == 5% or less."
+  },
+  "numberOfVstas": {
+    "val": 18,
+    "label": "Number of VSTAs to create"
+  },
+  "tpairCountStart": {
+    "val": 1,
+    "label": "Lowest number of traffic pairs to use"
+  },
+  "tpairCountStop": {
+    "val": 18,
+    "label": "Highest number of traffic pairs to use"
+  },
+  "tpairCountStep": {
+    "val": 8,
+    "label": "Step traffic pair count with this increment"
+  },
+  "bitrateThreshold": {
+    "val": 30,
+    "label": "Bit rate threshold to end search.  I.e., as you narrow in on the throughput, how close do you have to get?  50 == within 50 Mbps."
+  },
+  "searchType": {
+    "val": [
+      {
+        "value": "highToLow",
+        "display": "High to Low",
+        "selected": false
+      },
+      {
+        "value": "search",
+        "display": "Search",
+        "selected": true
+      }
+    ],
+    "label": "Type of search to run.  Only really matters for UDP.  TCP will end after the first loop.  Search==Binary Search",
+    "DOMtype": "dropdown"
+  },
+  "eaLocation": {
+    "val": [
+      {
+        "value": "remote",
+        "display": "Remote",
+        "selected": false
+      },
+      {
+        "value": "local",
+        "display": "Local",
+        "selected": true
+      }
+    ],
+    "label": "Expert Analysis location (remote or local)",
+    "DOMtype": "dropdown"
+  },
+  "PAL_AP_PARAMETERS": {
+    "val": "*****************************************",
+    "label": "CONFIGURATION IF PAL USED AS AP SECTION"
+  },
+  "usePalAsAP": {
+    "val": false,
+    "label": "Use Pal as AP?"
+  },
+  "palToUseAsAP": {
+    "val": "Pal-6A",
+    "label": "If using Pal as AP, Pal to use."
+  },
+  "palToUseAsAPBand": {
+    "val": [
+      {
+        "value": "24g",
+        "display": "2.4 GHz",
+        "selected": false
+      },
+      {
+        "value": "5g",
+        "display": "5 GHz",
+        "selected": true
+      },
+      {
+        "value": "6g",
+        "display": "6 GHz",
+        "selected": false
+      }
+    ],
+    "label": "If using Pal as AP, band of operation.",
+    "DOMtype": "dropdown"
+  },
+  "palToUseAsAPChannel": {
+    "val": 149,
+    "label": "If using Pal as AP, channel of operation."
+  },
+  "palToUseAsAPSSID": {
+    "val": "PalUsedAsAP",
+    "label": "If using Pal as AP, SSID."
+  },
+  "palToUseAsAPPassword": {
+    "val": "octoscope",
+    "label": "If using Pal as AP, password."
+  },
+  "palToUseAsAPSecurity": {
+    "label": "If using Pal as AP, security mode",
+    "val": [
+      {
+        "value": "SECURITY_NONE",
+        "display": "None",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA",
+        "display": "WPA",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA2",
+        "display": "WPA2",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA_WPA2_MIXED",
+        "display": "WPA/2",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3",
+        "display": "WPA3",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3_WPA2_MIXED",
+        "display": "WPA2/3",
+        "selected": true
+      }
+    ],
+    "DOMtype": "dropdown"
+  }
+}

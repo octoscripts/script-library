@@ -1,0 +1,374 @@
+{
+  "testName": {
+    "val": "throughputScan",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "throughputScan",
+    "label": "Prefix for CSV filenames"
+  },
+  "testDescription": {
+    "val": "Run throughput tests for different protocols, bandwidths, and packet sizes.  Possibly a very long test, it runs traffic for, say, 11n at 2.4 GHz in 20 MHz, uplink.  Based on the calculable PHY rate, it runs the traffic at different offered loads, e.g. 25%, 50%, 75%, and 100% of that PHY rate.  The traffic is run using, say, 128 byte packets.  It can then do the same test for, say, 256 byte packets.  And for downlink.  And for 20 MHz. Etc.  So for (say) 3 different 802.11 standards, 2 bands, 4 bandwidths, up/down, 4 loads, and 4 packet sizes, this would have to run 768 separate tests.",
+    "label": "Test Description"
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "stepDuration": {
+    "val": 10,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "quadAttenStart": {
+    "val": 0,
+    "label": "Quad attenuator starting value (dB)"
+  },
+  "step": {
+    "val": 1,
+      "label": "Quad attenuator step size (dB). Set = 1 for static attenution.",
+      "readonly": true
+  },
+  "quadAttenStop": {
+    "val": 0,
+      "label": "Quad attenuator stopping value (dB) [integer]",
+      "readonly":true
+  },
+  "attensToUse": {
+    "val": [
+      "QA-A",
+      "QA-B"
+    ],
+    "label": "Attenuators to participate in ramping"
+  },
+  "settlingTime": {
+    "val": 2,
+    "label": "Settling Time (seconds)"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to wait before making measurement(sec) [integer]"
+  },
+  "palToUse": {
+    "val": [
+      {
+        "value": "L3C",
+        "display": "L3C",
+        "selected": false
+      },
+      {
+        "value": "L4C",
+        "display": "L4C",
+        "selected": true
+      },
+      {
+        "value": "iperf2Client",
+        "display": "iperf2 client",
+        "selected": false
+      },
+      {
+        "value": "iperf3Client",
+        "display": "iperf3 client",
+        "selected": false
+      }
+    ],
+    "label": "Pal/STApal to use for test. Can be any STApal in Box C or Box E or Pal6-C",
+    "DOMtype": "dropdown"
+  },
+  "customIP": {
+    "val": "192.168.80.27",
+    "label": "IP address to use if iPerf client"
+  },
+  "customPort": {
+    "val": "5201",
+    "label": "Port to use if iPerf client"
+  },
+  "customAlias": {
+    "val": "L3C_iperf3",
+    "label": "Alias to use if iPerf client"
+  },
+  "testUses": {
+    "label": "Instruments required for this test. SD2 format",
+    "val": []
+  },
+  "band": {
+    "val": [
+      {
+        "value": "24g",
+        "display": "2.4 GHz",
+        "selected": true
+      },
+      {
+        "value": "5g",
+        "display": "5 GHz",
+        "selected": false
+      },
+      {
+        "value": "5g_2",
+        "display": "5_2 GHz (tri-band 5 GHz #2",
+        "selected": false
+      },
+      {
+        "value": "6g",
+        "display": "6 GHz",
+        "selected": false
+      }
+    ],
+    "label": "Frequency band",
+    "DOMtype": "dropdown"
+  },
+  "primaryChannel": {
+    "val": 0,
+    "label": "Channel of operation"
+  },
+  "bw": {
+    "val": [
+      {
+        "value": "BANDWIDTH_ADAPT",
+        "display": "Adapt",
+        "selected": true
+      },
+      {
+        "value": "BANDWIDTH_20_FIXED",
+        "display": "20 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_40_ADAPT",
+        "display": "40 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_80_ADAPT",
+        "display": "80 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_160_ADAPT",
+        "display": "160 MHz",
+        "selected": false
+      }
+    ],
+    "label": "Channel bandwidth",
+    "DOMtype": "dropdown"
+  },
+  "iface": {
+    "val": [
+      {
+        "value": "INTERFACE_G",
+        "display": "802.11g",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_N",
+        "display": "802.11n (Wi-Fi 4)",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AC",
+        "display": "802.11ac (Wi-Fi 5)",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AX",
+        "display": "802.11ax (Wi-Fi 6)",
+        "selected": true
+      }
+    ],
+    "label": "802.11 protocol version",
+    "DOMtype": "dropdown"
+  },
+  "nss": {
+    "val": "1",
+    "label": "Number of spatial streams"
+  },
+  "iperfMode": {
+    "label": "iPerf Mode (tcp, udp)",
+    "val": "udp"
+  },
+  "trafficType": {
+    "val": "iperf3",
+    "label": "Traffic type to run [iperf2 | iperf3 | ping | None]"
+  },
+  "length": {
+    "val": "",
+    "label": "Packet size, bytes"
+  },
+  "parallel": {
+    "val": "1",
+    "label": "Parallel streams"
+  },
+  "window": {
+    "val": "4M",
+    "label": "Window size"
+  },
+  "dscp": {
+    "val": "0",
+    "label": "DSCP"
+  },
+  "snifferBW": {
+    "val": "80",
+    "label": "Bandwidth for the sniffer"
+  },
+  "AP_SETTINGS": {
+    "val": "*****************************************",
+    "label": "AP SETTINGS"
+  },
+  "usePalAsAP": {
+    "val": false,
+    "label": "Use Pal as AP?"
+  },
+  "palToUseAsAP": {
+    "val": "Pal-6A",
+    "label": "If using Pal as AP, Pal to use."
+  },
+  "palToUseAsAPSSID": {
+    "val": "palAsAP",
+    "label": "If using Pal as AP, SSID."
+  },
+  "palToUseAsAPPassword": {
+    "val": "octoscope",
+    "label": "If using Pal as AP, password."
+  },
+  "palToUseAsAPSecurity": {
+    "label": "If using Pal as AP, security mode",
+    "val": [
+      {
+        "value": "SECURITY_NONE",
+        "display": "None",
+        "selected": true
+      },
+      {
+        "value": "SECURITY_WPA",
+        "display": "WPA",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA2",
+        "display": "WPA2",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA_WPA2_MIXED",
+        "display": "WPA/2",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3",
+        "display": "WPA3",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3_WPA2_MIXED",
+        "display": "WPA2/3",
+        "selected": false
+      }
+    ],
+    "DOMtype": "dropdown"
+  },
+  "OTHERPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ANY OTHER ITEM CONFIGURATION SECTION"
+  },
+  "do11ax": {
+    "val": false,
+    "label": "Run 11ax test"
+  },
+  "Settings11ax": {
+    "val": {
+      "24g": {
+        "channel": 6,
+        "BWs": [
+          20,
+          40
+        ],
+        "streams": 1
+      },
+      "5g": {
+        "channel": 36,
+        "BWs": [
+          20,
+          40,
+          80,
+          160
+        ],
+        "streams": 1
+      },
+      "6g": {
+        "channel": 227,
+        "BWs": [
+          20,
+          40,
+          80,
+          160
+        ],
+        "streams": 1
+      }
+    },
+    "label": "Settings to use for 802.11ax"
+  },
+  "do11ac": {
+    "val": false,
+    "label": "Run 11ac test"
+  },
+  "Settings11ac": {
+    "val": {
+      "5g": {
+        "channel": 36,
+        "BWs": [
+          20,
+          40,
+          80,
+          160
+        ],
+        "streams": 1
+      }
+    },
+    "label": "Settings to use for 802.11ac"
+  },
+  "do11n": {
+    "val": true,
+    "label": "Run 11n test"
+  },
+  "Settings11n": {
+    "val": {
+      "24g": {
+        "channel": 6,
+        "BWs": [
+          20
+        ],
+        "streams": 1
+      },
+      "5g": {
+        "channel": 36,
+        "BWs": [
+          40
+        ],
+        "streams": 1
+      }
+    },
+    "label": "Settings to use for 802.11n"
+  },
+  "doUplink": {
+    "val": false,
+    "label": "Run uplink tests"
+  },
+  "doDownlink": {
+    "val": true,
+    "label": "Run downlink tests"
+  },
+  "packetSizes": {
+    "val": [
+      null
+    ],
+    "label": "Packet sizes to test"
+  },
+  "loadingLevels": {
+    "val": [
+      20,
+      50,
+      100,
+      200
+    ],
+    "label": "Offered load as percentage of PHY"
+  }
+}

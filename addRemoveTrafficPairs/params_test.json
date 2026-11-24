@@ -1,0 +1,163 @@
+{
+  "testName": {
+    "val": "addRemoveTrafficPairs",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "addRemoveTrafficPairs",
+    "label": "Prefix for CSV filenames"
+  },
+  "testDescription": {
+    "val": "Example of turing on/off traffic pairs while a test is ongoing.",
+    "label": "Test Description"
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "testUses": {
+    "label": "Instruments required for this test. SD2 format DO NOT MODIFY!",
+    "val": []
+  },
+  "stepDuration": {
+    "val": 1000,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "quadAttenStart": {
+    "val": 0,
+    "label": "Quad attenuator starting value (dB)"
+  },
+  "step": {
+    "val": 10,
+    "label": "Quad attenuator step size (dB). Set = 1 for static attenution."
+  },
+  "quadAttenStop": {
+    "val": 0,
+    "label": "Quad attenuator stopping value (dB) [integer]"
+  },
+  "settlingTime": {
+    "val": 2,
+    "label": "Settling Time (seconds)"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to wait before making measurement(sec) [integer]"
+  },
+    "palToUseSTAs":{
+	"val": ["L1C","L2C","L3C","L4C","L5C","L7C","L8C","L9C","L10C","L11C","L12C","L13C","L14C","L15C","L16C"],
+	"label": "List of pals to use as STAs"
+    },	
+    "primaryChannel": {
+    "val": 36,
+    "label": "Channel of operation"
+  },
+  "bw": {
+    "val": [
+      {
+        "value": "BANDWIDTH_ADAPT",
+        "display": "Adapt",
+        "selected": true
+      },
+      {
+        "value": "BANDWIDTH_20_FIXED",
+        "display": "20 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_40_ADAPT",
+        "display": "40 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_80_ADAPT",
+        "display": "80 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_160_ADAPT",
+        "display": "160 MHz",
+        "selected": false
+      }
+    ],
+    "label": "Channel bandwidth",
+    "DOMtype": "dropdown"
+  },
+  "iface": {
+    "val": [
+      {
+        "value": "INTERFACE_G",
+        "display": "802.11g",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_N",
+        "display": "802.11n (Wi-Fi 4)",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AC",
+        "display": "802.11ac (Wi-Fi 5)",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AX",
+        "display": "802.11ax (Wi-Fi 6)",
+        "selected": true
+      }
+    ],
+    "label": "802.11 protocol version",
+    "DOMtype": "dropdown"
+  },
+  "nss": {
+    "val": "1",
+    "label": "Number of spatial streams"
+  },
+  "iperfMode": {
+    "label": "iPerf Mode (tcp, udp)",
+    "val": "udp"
+  },
+  "trafficType": {
+    "val": "iperf2",
+    "label": "Traffic type to run [iperf2 | iperf3 | ping | None]"
+  },
+  "trafficBW": {
+    "val": "50M",
+    "label": "Bit rate.  Use #K or #M, like 20M for 20 Mbps"
+  },
+  "ulDl": {
+    "label": "Uplink or downlink traffic",
+    "DOMtype": "dropdown",
+    "val": [
+      {
+        "value": "up",
+        "display": "Uplink",
+        "selected": false
+      },
+      {
+        "value": "down",
+        "display": "Downlink",
+        "selected": true
+      }
+    ]
+  },
+  "length": {
+    "val": "",
+    "label": "Packet size, bytes"
+  },
+  "parallel": {
+    "val": "1",
+    "label": "Parallel streams"
+  },
+  "window": {
+    "val": "4M",
+    "label": "Window size"
+  },
+  "pingPayload": {
+    "val": "64",
+    "label": "Ping payload, bytes"
+  },
+  "OTHERPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ANY OTHER ITEM CONFIGURATION SECTION"
+  }
+}

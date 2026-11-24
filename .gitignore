@@ -1,0 +1,16 @@
+*.*~
+*.pyc
+*.json_*
+*.tar
+*.csv
+directories.json
+*.json
+!params_test.json
+!params_system.json
+*SAVE*
+*save*
+*.pcap
+*.pcapng
+*LLM*
+*.sh
+*.txt

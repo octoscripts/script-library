@@ -1,0 +1,275 @@
+{
+  "testName": {
+    "val": "vstaExampleTriband",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "vstaExampleTri",
+    "label": "Prefix for JSON filenames"
+  },
+  "testDescription": {
+    "val": "Run traffic to/from vSTAs on Pal6-C to either real AP in Box A or Pal6A as AP. Supports triband and bidirectional modes. ",
+    "label": "Test Description"
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "settlingTime": {
+    "val": 2,
+    "label": "Time to ignore test data at the beginning of test. (sec) [integer]"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to ignore test data at start of each attenuator step. (sec) [integer]"
+  },
+  "stepDuration": {
+    "val": 15,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "quadAttenStart": {
+    "val": 0,
+    "label": "Quad attenuator starting value (dB)"
+  },
+  "quadAttenStop": {
+    "val": 0,
+    "label": "Quad attenuator stopping value (dB) [integer]"
+  },
+  "step": {
+    "val": 1,
+    "label": "Quad attenuator step size (dB)"
+  },
+  "testUses": {
+    "label": "Instruments required for this test. SD2 format",
+    "val": []
+  },
+  "APsettings": {
+    "val": "*****************************************",
+    "label": "Access Point / DUT SECTION"
+  },
+  "palAsAP": {
+    "val": [
+      {
+        "value": "None",
+        "display": "None.  Use real AP.",
+        "selected": true
+      },
+      {
+        "value": "Pal-6A",
+        "display": "Pal-6A",
+        "selected": false
+      }
+    ],
+    "label": "Pal to use as the AP",
+    "DOMtype": "dropdown"
+  },
+  "pal6APbandConfig": {
+    "val": "BAND_TRI",
+    "label": "5 GHz band configuration"
+  },
+  "pal6APssid": {
+    "val": "PAL6A-AP",
+    "label": "Pal6 AP SSID"
+  },
+  "pal6APsecurity": {
+    "val": "SECURITY_WPA3",
+    "label": "Pal6 AP security"
+  },
+  "pal6APpass": {
+    "val": "pal6APkey",
+    "label": "Pal6 AP password"
+  },
+  "pal6APchannel_24g": {
+    "val": 1,
+    "label": "2.4 GHz Channel for Pal6 AP. Set = 0 to disable radio."
+  },
+  "pal6APchannel_5g": {
+    "val": 0,
+    "label": "5 GHz dual-band mode Channel for Pal6 AP. Set = 0 to disable radio."
+  },
+  "pal6APchannel_5Ag": {
+    "val": 161,
+    "label": "5 GHz A tri-band mode Channel for Pal6 AP. Set = 0 to disable radio."
+  },
+  "pal6APchannel_5Bg": {
+    "val": 44,
+    "label": "5 GHz B tri-band mode Channel for Pal6 AP. Set = 0 to disable radio."
+  },
+  "pal6APchannel6g": {
+    "val": 0,
+    "label": "6 GHz Channel for Pal6 AP. Set = 0 to disable radio."
+  },
+  "VSTAPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ENDPOINT CONFIGURATION SECTION"
+  },
+  "palToUse": {
+    "val": "P7C",
+    "label": "Pal on which to create vSTAs."
+  },
+  "vstaSettings": {
+    "label": "Settings for the vSTAs, per radio.",
+    "val": [
+      {
+        "vstaCount": 4,
+        "band": "24g",
+        "interface": "INTERFACE_AX",
+        "primaryChannel": 0,
+        "streams": 2,
+        "bandwidth": "BANDWIDTH_20_FIXED",
+        "txAtten": 0
+      },
+      {
+        "vstaCount": 4,
+        "band": "5Ag",
+        "interface": "INTERFACE_AX",
+        "primaryChannel": 0,
+        "streams": 2,
+        "bandwidth": "BANDWIDTH_80_ADAPT",
+        "txAtten": 0
+      },
+      {
+        "vstaCount": 4,
+        "band": "5Bg",
+        "interface": "INTERFACE_AX",
+        "primaryChannel": 0,
+        "streams": 2,
+        "bandwidth": "BANDWIDTH_80_ADAPT",
+        "txAtten": 0
+      }
+    ]
+  },
+  "TRAFFICPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TRAFFIC PAIR CONFIGURATION SECTION"
+  },
+  "trafficPairs": {
+    "label": "List of traffic pairs to configure",
+    "val": [
+      {
+        "band": "24g",
+        "updn": "dn",
+        "trafficType": "iperf3",
+        "packetType": "tcp",
+        "trafficRate": "0M",
+        "packetSize": "",
+        "trafficStreams": "5",
+        "windowSize": "1M",
+        "pingInterval": "200",
+        "advanced": false,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "band": "24g",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "tcp",
+        "trafficRate": "0M",
+        "packetSize": "",
+        "trafficStreams": "5",
+        "windowSize": "1M",
+        "pingInterval": "200",
+        "advanced": false,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "band": "5Ag",
+        "updn": "dn",
+        "trafficType": "iperf3",
+        "packetType": "tcp",
+        "trafficRate": "0M",
+        "packetSize": "",
+        "trafficStreams": "5",
+        "windowSize": "1M",
+        "pingInterval": "200",
+        "advanced": false,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "band": "5Ag",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "tcp",
+        "trafficRate": "0M",
+        "packetSize": "",
+        "trafficStreams": "5",
+        "windowSize": "1M",
+        "pingInterval": "200",
+        "advanced": false,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "band": "5Bg",
+        "updn": "dn",
+        "trafficType": "iperf3",
+        "packetType": "tcp",
+        "trafficRate": "0M",
+        "packetSize": "",
+        "trafficStreams": "5",
+        "windowSize": "1M",
+        "pingInterval": "200",
+        "advanced": false,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      },
+      {
+        "band": "5Bg",
+        "updn": "up",
+        "trafficType": "iperf3",
+        "packetType": "tcp",
+        "trafficRate": "0M",
+        "packetSize": "",
+        "trafficStreams": "5",
+        "windowSize": "1M",
+        "pingInterval": "200",
+        "advanced": false,
+        "isochronous": false,
+        "dscp": 0,
+        "iso_ipg": 0.005,
+        "iso_mean": "2M",
+        "iso_stdev": "2M",
+        "iso_fps": 60
+      }
+    ]
+  },
+  "vstaWait": {
+    "val": 5,
+    "label": "Number of seconds to wait per vSTA for association and config push"
+  },
+  "OTHERPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ANY OTHER ITEM CONFIGURATION SECTION"
+  },
+  "restartPals": {
+    "val": false,
+    "label": "Set true to restart all Pals and STApals in STACK. Use if getting timeouts when trying to access Pal6 after using vSTAs."
+  },
+  "rest_timeout": {
+    "val": 180,
+    "label": "Maximum wait for REST API call to respond. Integer seconds."
+  }
+}

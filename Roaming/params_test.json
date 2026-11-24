@@ -1,0 +1,455 @@
+{
+  "testName": {
+    "val": "Roaming",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "roaming",
+    "label": "Prefix for CSV filenames"
+  },
+  "testDescription": {
+    "val": "Roam from box A to box B, and capture sniffing trace.  Test finds the attenuation value at which the connection to box A breaks, and the same for box B.  It then tries to create an attenuation ramping range to focus on the condition to cause a roam.  The roam is caused, the data is sniffed, the roam time is calculated.  Then the test allows the user to ask for this to be done over and over again.  Statistics are stored in the results log file.",
+    "label": "Test Description"
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "settlingTime": {
+    "val": 2,
+    "label": "Settling Time (seconds)"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to wait before making measurement(sec) [integer]"
+  },
+  "step": {
+    "val": 1,
+    "label": "Quad attenuator step size (dB). Set = 1 for static attenution."
+  },
+  "stepDuration": {
+    "val": 86400,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "ATTENUATORSETTINGS": {
+    "val": "*****************************************",
+    "label": "ATTENUATOR SETTINGS"
+  },
+  "attenForRoot": {
+    "val": "QJ-34",
+    "label": "Attenuator connecting the STA(s) to the Root"
+  },
+  "attenForLeaf1": {
+    "val": "QE-12",
+    "label": "Attenuator connecting the STA(s) to Leaf 1"
+  },
+  "attenForRootToLeaf1": {
+    "val": "QA-D",
+    "label": "Attenuator connecting the Root to Leaf 1"
+  },
+  "attensForSniffers": {
+    "val": [],
+    "label": "Attenuators used for sniffers.  Set only if different from the Root and Leaf1 attenuators."
+  },
+  "backhaulAttenValue": {
+    "val": 20,
+    "label": "Backhaul Attenuation Value"
+  },
+  "ROAMINGSTATIONS": {
+    "val": "*****************************************",
+    "label": "ROAMING STATIONS"
+  },
+  "stationCount": {
+    "val": 1,
+    "label": "How many STAs to use in the test, no matter how many are in the list.  Using this number from the top down."
+  },
+  "channelToUseSTA": {
+    "val": 149,
+    "label": "Channel to set for APs, STAs, ..."
+  },
+  "assign_STA_MAC": {
+    "val": true,
+    "label": "Assign the STA MAC by hand."
+  },
+  "palsToUseSTA": {
+    "val": [
+      {
+        "name": "L3E-STApal",
+        "interface": "INTERFACE_AX",
+        "MAC": "54:14:F3:A9:0C:95",
+        "tag": "L3E"
+      },
+      {
+        "name": "L2E-STApal",
+        "interface": "INTERFACE_AX",
+        "MAC": "E8:BF:B8:5A:0C:1C",
+        "tag": "L2E"
+      },
+      {
+        "name": "L4E-STApal",
+        "interface": "INTERFACE_AC",
+        "MAC": "E8:BF:B8:5A:6F:22",
+        "tag": "L4E"
+      },
+      {
+        "name": "L2E-STApal",
+        "interface": "INTERFACE_BE",
+        "mlo": {
+          "credentials": {
+            "ssid": "TMOBILE-2745",
+            "security": "SECURITY_WPA3_WPA2_MIXED",
+            "password": "f274x6bzskv"
+          },
+          "bands": {
+            "24g": {
+              "member": true,
+              "channel": 2,
+              "bandwidth": "BANDWIDTH_40_ADAPT",
+              "streams": 4
+            },
+            "5g": {
+              "member": true,
+              "channel": 100,
+              "bandwidth": "BANDWIDTH_160_ADAPT",
+              "streams": 4
+            },
+            "6g": {
+              "member": true,
+              "channel": 37,
+              "bandwidth": "BANDWIDTH_160_ADAPT",
+              "streams": 4
+            }
+          },
+          "interface": "INTERFACE_BE"
+        }
+      }
+    ],
+    "label": "List of Pals to use as STAs, if more than one."
+  },
+  "MESHNODES": {
+    "val": "*****************************************",
+    "label": "MESH NODES"
+  },
+  "assign_Root_AP_MAC": {
+    "val": true,
+    "label": "Assign the MAC of the Box A AP by hand."
+  },
+  "assigned_Root_AP_MAC": {
+    "val": "2c:27:9e:91:c1:9d",
+    "label": "Assigned Box A MAC, if assigned by hand. (eg 2c:27:9e:91:c1:9d)"
+  },
+  "assign_Leaf1_AP_MAC": {
+    "val": true,
+    "label": "Assign the MAC of the Box B AP by hand."
+  },
+  "assigned_Leaf1_AP_MAC": {
+    "val": "2c:27:9e:91:be:99",
+    "label": "Assigned Box B MAC, if assigned by hand. (eg 2c:27:9e:91:be:99)"
+  },
+  "SNIFFERS": {
+    "val": "*****************************************",
+    "label": "SNIFFERS"
+  },
+  "palsToUseSniffers": {
+    "val": [
+      {
+        "name": "L2E-STApal",
+        "channel": 149,
+        "active": true
+      }
+    ],
+    "label": "Pals to use for sniffing, and channel to set."
+  },
+  "headersOnly": {
+    "val": true,
+    "label": "Sniffer captures packet headers only"
+  },
+  "managementOnly": {
+    "val": false,
+    "label": "Sniffer captures management packets only"
+  },
+      "headlessSniffer": {
+    "val": true,
+    "label": "Headless sniffing stores the file on the server.  It does NOT open Wireshark.  It does NOT require SnifferRelay.js to be running."
+  },
+  "IPSTREAMDEFAULTS": {
+    "val": "*****************************************",
+    "label": "IP STREAM DEFAULTS"
+  },
+  "tGenerator": {
+    "val": [
+      {
+        "value": "iperf2",
+        "display": "iperf2",
+        "selected": true
+      },
+      {
+        "value": "iperf3",
+        "display": "iperf3",
+        "selected": false
+      },
+      {
+        "value": "ping",
+        "display": "ping",
+        "selected": false
+      }
+    ],
+    "label": "Traffic generator",
+    "DOMtype": "dropdown"
+  },
+  "tProtocol": {
+    "val": [
+      {
+        "value": "tcp",
+        "display": "TCP",
+        "selected": false
+      },
+      {
+        "value": "udp",
+        "display": "UDP",
+        "selected": true
+      }
+    ],
+    "label": "Traffic protocol type",
+    "DOMtype": "dropdown"
+  },
+  "tRate": {
+    "val": "1M",
+    "label": "Traffic bit rate.  Include units."
+  },
+  "parallel": {
+    "val": "1",
+    "label": "Parallel streams"
+  },
+  "window": {
+    "val": "4M",
+    "label": "Window size"
+  },
+  "length": {
+    "val": "700",
+    "label": "Packet size, bytes"
+  },
+  "pingInterval": {
+    "val": 1,
+    "label": "Ping interval, msec"
+  },
+  "showAdvanced": {
+    "val": true,
+    "label": "Show advanced options"
+  },
+  "dscp": {
+    "val": 0,
+    "label": "DSCP"
+  },
+  "upOrDown": {
+    "val": [
+      {
+        "value": "up",
+        "display": "Uplink",
+        "selected": true
+      },
+      {
+        "value": "dn",
+        "display": "Downlink",
+        "selected": false
+      },
+      {
+        "value": "bi",
+        "display": "Bi-directional",
+        "selected": false
+      }
+    ],
+    "label": "Traffic direction, uplink, downlink, bi-directional.",
+    "DOMtype": "dropdown"
+  },
+  "isochronous": {
+    "val": true,
+    "label": "Enable isochronous traffic, for iPerf2"
+  },
+  "iso_gap": {
+    "val": 0.005,
+    "label": "Isochronous, inter-packet gap"
+  },
+  "iso_mean": {
+    "val": 2,
+    "label": "Isochronous, mean"
+  },
+  "iso_mean_units": {
+    "label": "Units for isochronous, mean",
+    "val": [
+      {
+        "value": "M",
+        "display": "M",
+        "selected": false
+      },
+      {
+        "value": "K",
+        "display": "K",
+        "selected": false
+      },
+      {
+        "value": "G",
+        "display": "G",
+        "selected": false
+      },
+      {
+        "value": "m",
+        "display": "m",
+        "selected": true
+      },
+      {
+        "value": "k",
+        "display": "k",
+        "selected": false
+      },
+      {
+        "value": "g",
+        "display": "g",
+        "selected": false
+      },
+      {
+        "value": "p",
+        "display": "p",
+        "selected": false
+      }
+    ],
+    "DOMtype": "dropdown"
+  },
+  "iso_stdev": {
+    "val": "0",
+    "label": "Isochronous, standard deviation"
+  },
+  "iso_fps": {
+    "val": 1000,
+    "label": "Isochronous, frames per second"
+  },
+  "ROAMINGBEHAVIOR": {
+    "val": "*****************************************",
+    "label": "ROAMING BEHAVIOR"
+  },
+  "backAndForthRoaming": {
+    "val": false,
+    "label": "If TRUE, roam A-to-B, then B-to-A.  If FALSE, always go A-to-B."
+  },
+  "allowEarlyRampStop": {
+    "val": true,
+    "label": "When using a Pal for roaming, allow the ramping to end just after a roam is found.  Don't require it to go to the extreme setting."
+  },
+  "disconnectionPoints": {
+    "val": "45,45",
+    "label": "Disassociation points for box A,B.  Unless both are there, the script will try to find them.  Example entry would be 45,65"
+  },
+  "roamLowSide": {
+    "val": -45,
+    "label": "dB below disassociation point to start"
+  },
+  "roamHighSide": {
+    "val": 45,
+    "label": "dB above disassociation point to end"
+  },
+  "secondsPerAttenuationStep": {
+    "val": 1,
+    "label": "Time, in seconds, to spend at each attenuation step"
+  },
+  "roamThreshold": {
+    "val": -95,
+    "label": "When current RSSI <= this amount, start roaming behavior e.g. scanning for targets."
+  },
+  "roamTargetThreshold": {
+    "val": -95,
+    "label": "When trying to roam, a possible roam target must have a signal >= this amount"
+  },
+  "AdditionalRoams": {
+    "val": 0,
+    "label": "Number of roams beyond the first one"
+  },
+  "PALSASAPS": {
+    "val": "*****************************************",
+    "label": "SETTINGS FOR PALS AS APS"
+  },
+  "palsAsAPs": {
+    "val": false,
+    "label": "Use Pals as APs?"
+  },
+  "palAsAPssid": {
+    "val": "roamtestSSID",
+    "label": "SSID if Pals are used as APs"
+  },
+  "palAsAPpassword": {
+    "val": "octoscope123",
+    "label": "If using Pal as AP, password."
+  },
+  "palAsAPsecurity": {
+    "label": "If using Pal as AP, security mode",
+    "val": [
+      {
+        "value": "SECURITY_NONE",
+        "display": "None",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA",
+        "display": "WPA",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA2",
+        "display": "WPA2",
+        "selected": true
+      },
+      {
+        "value": "SECURITY_WPA_WPA2_MIXED",
+        "display": "WPA/2",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3",
+        "display": "WPA3",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3_WPA2_MIXED",
+        "display": "WPA2/3",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA2_ENTERPRISE",
+        "display": "WPA2 Enterprise",
+        "selected": false
+      }
+    ],
+    "DOMtype": "dropdown"
+  },
+  "OTHERPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ANY OTHER ITEM CONFIGURATION SECTION"
+  },
+  "customAlias": {
+    "val": "MP-Laptop",
+    "label": "Alias to set if the endpoint is iperf2/3. Name of endpoint is type=multiperf."
+  },
+  "customIP": {
+    "val": "192.168.80.50",
+    "label": "IP address to use if the endpoint is iperf2/3."
+  },
+  "customPort": {
+    "val": "",
+    "label": "Port to use if the endpoint is iperf2/3."
+  },
+  "doKick": {
+    "val": false,
+    "label": "Attempt to kick the STA MAC address out of the association table of the Pals as APs."
+  },
+  "skipIgenCheck": {
+    "val": true,
+    "label": "Skip the iGen check and shutdown"
+  },
+  "outlierLow": {
+    "val": 0,
+    "label": "Roam time plot between outlierLow and outlierHigh percentiles, to keep autoscaling from making the plots hard to read"
+  },
+  "outlierHigh": {
+    "val": 100,
+    "label": "Roam time plot between outlierLow and outlierHigh percentiles, to keep autoscaling from making the plots hard to read"
+  }
+}

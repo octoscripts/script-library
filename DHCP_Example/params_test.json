@@ -1,0 +1,54 @@
+{
+  "testName": {
+    "val": "DHCP_Example",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "dhcpExample",
+    "label": "Prefix for CSV filenames"
+  },
+  "testDescription": {
+    "val": "Create a test using DHCP for the station.  Note that you have to pull the IP address first before creating the traffic pair.",
+    "label": "Test Description"
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "settlingTime": {
+    "val": 2,
+    "label": "Settling Time (seconds)"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to wait before making measurement(sec) [integer]"
+  },
+  "step": {
+    "val": 10,
+    "label": "Quad attenuator step size (dB). Set = 1 for static attenution."
+  },
+  "stepDuration": {
+    "val": 10,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "IPSTREAMDEFAULTS": {
+    "val": "*****************************************",
+    "label": "IP STREAM DEFAULTS"
+  },
+  "parallel": {
+    "val": "4",
+    "label": "Parallel streams"
+  },
+  "window": {
+    "val": "4M",
+    "label": "Window size"
+  },
+  "length": {
+    "val": "0",
+    "label": "Packet size, bytes"
+  },
+  "OTHERPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ANY OTHER ITEM CONFIGURATION SECTION"
+  }
+}

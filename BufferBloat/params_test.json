@@ -1,0 +1,283 @@
+{
+  "testName": {
+    "val": "BufferBloat",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "BufferBloat",
+    "label": "Prefix for CSV filenames"
+  },
+  "testDescription": {
+    "val": "From wwww.bufferbloat.net/projects/bloat/wiki/Tests_for_Bufferbloat/. Quick Test for Bufferbloat. If you want to observe latency under load (bufferbloat) for yourself, try this. Start a ping (to google.com). You’ll see a series of lines, one per ping, typically with times in the 20-100 msec range. Start a speed test from one of the speed test services (e.g. fast.com speedtest.net) while the pings continue.  Watch the ping times while the speed test is running. If the times jump up when uploading or downloading, then your router is probably bloated.",
+    "label": "Test Description"
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "stepDuration": {
+    "val": 10,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "quadAttenStart": {
+    "val": 0,
+    "label": "Quad attenuator starting value (dB)"
+  },
+  "step": {
+    "val": 10,
+    "label": "Quad attenuator step size (dB). Set = 1 for static attenution."
+  },
+  "quadAttenStop": {
+    "val": 0,
+    "label": "Quad attenuator stopping value (dB) [integer]"
+  },
+  "settlingTime": {
+    "val": 2,
+    "label": "Settling Time (seconds)"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to wait before making measurement(sec) [integer]"
+  },
+  "palToUsePing": {
+    "val": [
+      {
+        "value": "L2C",
+        "display": "L2C",
+        "selected": true
+      },
+      {
+        "value": "L3C",
+        "display": "L3C",
+        "selected": false
+      },
+      {
+        "value": "L4C",
+        "display": "L4C",
+        "selected": false
+      },
+      {
+        "value": "L5C",
+        "display": "L5C",
+        "selected": false
+      },
+      {
+        "value": "L6C",
+        "display": "L6C",
+        "selected": false
+      },
+      {
+        "value": "L7C",
+        "display": "L7C",
+        "selected": false
+      }
+    ],
+    "label": "Name of STApal to use for test STA.",
+    "DOMtype": "dropdown"
+  },
+  "pingInterval": {
+    "val": 200,
+    "label": "Ping interval in msec"
+  },
+  "palToUseSTA": {
+    "val": [
+      {
+        "value": "L2C",
+        "display": "L2C",
+        "selected": false
+      },
+      {
+        "value": "L3C",
+        "display": "L3C",
+        "selected": true
+      },
+      {
+        "value": "L4C",
+        "display": "L4C",
+        "selected": false
+      },
+      {
+        "value": "L5C",
+        "display": "L5C",
+        "selected": false
+      },
+      {
+        "value": "L6C",
+        "display": "L6C",
+        "selected": false
+      },
+      {
+        "value": "L7C",
+        "display": "L7C",
+        "selected": false
+      }
+    ],
+    "label": "Name of STApal to use for test STA.",
+    "DOMtype": "dropdown"
+  },
+  "usePalAsAp": {
+    "val": false,
+    "label": "If true, use the Pal (Pal6-A) as the AP."
+  },
+  "testUses": {
+    "label": "Instruments required for this test. SD2 format DO NOT MODIFY!",
+    "val": []
+  },
+  "primaryChannel": {
+    "val": 36,
+    "label": "Channel of operation"
+  },
+  "bw": {
+    "val": [
+      {
+        "value": "BANDWIDTH_ADAPT",
+        "display": "Adapt",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_20_FIXED",
+        "display": "20 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_40_ADAPT",
+        "display": "40 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_80_ADAPT",
+        "display": "80 MHz",
+        "selected": true
+      },
+      {
+        "value": "BANDWIDTH_160_ADAPT",
+        "display": "160 MHz",
+        "selected": false
+      }
+    ],
+    "label": "Channel bandwidth",
+    "DOMtype": "dropdown"
+  },
+  "iface": {
+    "val": [
+      {
+        "value": "INTERFACE_G",
+        "display": "802.11g",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_N",
+        "display": "802.11n (Wi-Fi 4)",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AC",
+        "display": "802.11ac (Wi-Fi 5)",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AX",
+        "display": "802.11ax (Wi-Fi 6)",
+        "selected": true
+      }
+    ],
+    "label": "802.11 protocol version",
+    "DOMtype": "dropdown"
+  },
+  "nss": {
+    "val": "2",
+    "label": "Number of spatial streams"
+  },
+  "iperfMode": {
+    "label": "iPerf Mode (tcp, udp)",
+    "val": "udp"
+  },
+  "trafficType": {
+    "val": "iperf2",
+    "label": "Traffic type to run [iperf2 | iperf3 | ping | None]"
+  },
+  "trafficBW": {
+    "val": "300M",
+    "label": "Bit rate.  Use #K or #M, like 20M for 20 Mbps"
+  },
+  "trafficBWstart": {
+    "val": "100",
+    "label": "Bit rate.  Mbps"
+  },
+  "trafficBWend": {
+    "val": "500",
+    "label": "Bit rate.  Mbps"
+  },
+  "trafficBWstep": {
+    "val": "100",
+    "label": "Bit rate.  Mbps"
+  },
+  "ulDl": {
+    "label": "Uplink or downlink traffic",
+    "DOMtype": "dropdown",
+    "val": [
+      {
+        "value": "up",
+        "display": "Uplink",
+        "selected": false
+      },
+      {
+        "value": "down",
+        "display": "Downlink",
+        "selected": true
+      }
+    ]
+  },
+  "length": {
+    "val": "",
+    "label": "Packet size, bytes"
+  },
+  "parallel": {
+    "val": "1",
+    "label": "Parallel streams"
+  },
+  "window": {
+    "val": "4M",
+    "label": "Window size"
+  },
+  "pingPayload": {
+    "val": "64",
+    "label": "Ping payload, bytes"
+  },
+  "OTHERPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ANY OTHER ITEM CONFIGURATION SECTION"
+  },
+  "bandwidth24": {
+    "val": "BANDWIDTH_40_ADAPT",
+    "label": "Bandwidth 2.4 GHz if the Pal is the AP"
+  },
+  "bandwidth5": {
+    "val": "BANDWIDTH_80_ADAPT",
+    "label": "Bandwidth 5 GHz if the Pal is the AP"
+  },
+  "bandwidth6": {
+    "val": "BANDWIDTH_80_ADAPT",
+    "label": "Bandwidth 6 GHz if the Pal is the AP"
+  },
+   "useIperfHistograms": {
+    "val": false,
+       "label": "If true, use the iperf2 histograms to get latency, not just ping."
+  },
+ "eaLocation": {
+    "val": [
+      {
+        "value": "remote",
+        "display": "Remote",
+        "selected": false
+      },
+      {
+        "value": "local",
+        "display": "Local",
+        "selected": true
+      }
+    ],
+    "label": "Expert Analysis location (remote or local)",
+    "DOMtype": "dropdown"
+  }
+}

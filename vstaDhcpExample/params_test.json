@@ -1,0 +1,177 @@
+{
+  "testName": {
+    "val": "vstaDhcpExample",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "vstaDhcpExample",
+    "label": "Prefix for JSON filenames"
+  },
+  "testDescription": {
+    "val": "Using a single Pal, set up vSTAs on several bands.  Allow the vSTAs to use DHCP to get IP addresses, and correctly configure them, their traffic pairs, and run some RvR data.",
+    "label": "Test Description"
+  },
+  "myUserName": {
+    "val": "leigh",
+    "label": "User name for testbed reservation"
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "settlingTime": {
+    "val": 2,
+    "label": "Time to ignore test data at the beginning of test. (sec) [integer]"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to ignore test data at start of each attenuator step. (sec) [integer]"
+  },
+  "stepDuration": {
+    "val": 10,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "quadAttenStart": {
+    "val": 0,
+    "label": "Quad attenuator starting value (dB)"
+  },
+  "step": {
+    "val": 10,
+    "label": "Quad attenuator step size (dB)"
+  },
+  "quadAttenStop": {
+    "val": 40,
+    "label": "Quad attenuator stopping value (dB) [integer]"
+  },
+  "attensToUse": {
+    "val": [
+      "QA-A",
+      "QA-B"
+    ],
+    "label": "Attenuators to control"
+  },
+  "testUses": {
+    "label": "Instruments required for this test. SD2 format",
+    "val": []
+  },
+  "reassociationCheck": {
+    "label": "Set true to disassociate, then reassociate all vSTAs",
+    "val": false
+  },
+  "reassociationCheckTime": {
+    "label": "Time (seconds) to wait for all vSTA to disassociate",
+    "val": 30
+  },
+  "ENDPOINTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ENDPOINT CONFIGURATION SECTION"
+  },
+  "palToUse": {
+    "val": [
+      {
+        "value": "P7C",
+        "display": "P7C",
+        "selected": true
+      },
+      {
+        "value": "Pal-6B",
+        "display": "Pal-6B",
+        "selected": false
+      }
+    ],
+    "label": "Pal-6 to use for test.",
+    "DOMtype": "dropdown"
+  },
+  "vstaWait": {
+    "val": 5,
+    "label": "Number of seconds to wait per vSTA for association and config push"
+  },
+  "vstaSettings": {
+    "label": "Settings for the vSTAs, per radio.",
+    "val": [
+      {
+        "band": "24g",
+        "vstaCount": 0,
+        "interface": "INTERFACE_AX",
+        "streams": 2,
+        "bandwidth": "BANDWIDTH_20_FIXED",
+        "primaryChannel": 6,
+        "txAtten": 0
+      },
+      {
+        "band": "5g",
+        "vstaCount": 10,
+        "interface": "INTERFACE_AX",
+        "streams": 2,
+        "bandwidth": "BANDWIDTH_80_ADAPT",
+        "primaryChannel": 36,
+        "txAtten": 0
+      },
+      {
+        "band": "6g",
+        "vstaCount": 10,
+        "interface": "INTERFACE_AX",
+        "streams": 2,
+        "bandwidth": "BANDWIDTH_160_ADAPT",
+        "primaryChannel": 227,
+        "txAtten": 0
+      }
+    ]
+  },
+  "TRAFFICPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TRAFFIC PAIR CONFIGURATION SECTION"
+  },
+  "trafficType": {
+    "val": "iperf3",
+    "label": "Traffic type to run [iperf2 | iperf3 | ping | None]"
+  },
+  "trafficMode": {
+    "val": "tcp",
+    "label": "iperf2/3 traffic mode. 'tcp' or 'udp'"
+  },
+  "trafficPairs": {
+    "val": 2,
+    "label": "Number of traffic pairs to create"
+  },
+  "upOrDown": {
+    "val": [
+      {
+        "value": "up",
+        "display": "Uplink",
+        "selected": false
+      },
+      {
+        "value": "down",
+        "display": "Downlink",
+        "selected": true
+      }
+    ],
+    "label": "Traffic direction, uplink or downlink",
+    "DOMtype": "dropdown"
+  },
+  "trafficBW": {
+    "val": "0M",
+    "label": "Traffic bandwidth. Use K/M suffix; 0 for unlimited [string]."
+  },
+  "length": {
+    "val": "",
+    "label": "Length field.  This is the packet size, in bytes, for UDP."
+  },
+  "parallel": {
+    "val": "3",
+    "label": "Number of parallel iPerf traffic streams. NOT the same as spatial streams for MIMO."
+  },
+  "window": {
+    "val": "2M",
+    "label": "Window size for iPerf in bytes.  Use #K or #M, like 2M for 2 MBytes."
+  },
+  "OTHERPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ANY OTHER ITEM CONFIGURATION SECTION"
+  },
+  "linkMonitor": {
+    "val": false,
+    "label": "Set false to disable traffic pair link monitor. (default=False)"
+  }
+}

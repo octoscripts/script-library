@@ -1,0 +1,357 @@
+{
+  "testName": {
+    "val": "MuMIMO",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "MuMIMO",
+    "label": "Prefix for CSV filenames"
+  },
+  "testDescription": {
+    "val": "Put test description here",
+    "label": "MU-MIMO Test.  Run traffic to 3 STApals, first in the same quadrant, then in different quadrants, then back in the same quadrant.  Measure aggregate throughput. Capture and analyze traffic to confirm MU-MIMO operation."
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "settlingTime": {
+    "val": 2,
+    "label": "Settling Time (seconds)"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to wait before making measurement(sec) [integer]"
+  },
+  "stepDuration": {
+    "val": 200,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "step": {
+    "val": 1,
+    "label": "Quad attenuator step size (dB)"
+  },
+  "palToUse1": {
+    "val": "L2C",
+    "label": "Name of STApal to use"
+  },
+  "palToUse2": {
+    "val": "L4C",
+    "label": "Name of STApal to use"
+  },
+  "palToUse3": {
+    "val": "L5C",
+    "label": "Name of STApal to use"
+  },
+  "realStas": {
+    "val": [],
+    "label": "Include real STAs in the MU-MIMO test.\n\n[\n    {\n        \"alias\": \"L3C_iperf3\",\n        \"IP\": \"192.168.80.27\",\n        \"port\": \"5201\",\n        \"devType\": \"iperf3\"\n    }\n]"
+  },
+  "palToUseSniffer": {
+    "val": "L10C",
+    "label": "Name of STApal to use for sniffer"
+  },
+  "sniffmgmt": {
+    "val": false,
+    "label": "True to set sniffer management frames only mode, False to not"
+  },
+  "sniffheader": {
+    "val": true,
+    "label": "True to set sniffer header frames only mode, False to not"
+  },
+  "sniffFilter": {
+    "val": "",
+    "label": "Capture filter expression (Wireshark format)"
+  },
+  "sniffBW": {
+    "val": "",
+    "label": "Bandwidth for the sniffer"
+  },
+  "testUses": {
+    "label": "Instruments required for this test. SD2 format",
+    "val": []
+  },
+  "band": {
+    "val": [
+      {
+        "value": "24g",
+        "display": "2.4 GHz",
+        "selected": false
+      },
+      {
+        "value": "5g",
+        "display": "5 GHz",
+        "selected": true
+      },
+      {
+        "value": "5g_2",
+        "display": "5_2 GHz (tri-band 5 GHz #2",
+        "selected": false
+      },
+      {
+        "value": "6g",
+        "display": "6 GHz",
+        "selected": false
+      }
+    ],
+    "label": "Frequency band",
+    "DOMtype": "dropdown"
+  },
+  "primaryChannel": {
+    "val": 36,
+    "label": "Channel of operation"
+  },
+  "bw": {
+    "val": [
+      {
+        "value": "BANDWIDTH_ADAPT",
+        "display": "Adapt",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_20_FIXED",
+        "display": "20 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_40_ADAPT",
+        "display": "40 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_80_ADAPT",
+        "display": "80 MHz",
+        "selected": true
+      },
+      {
+        "value": "BANDWIDTH_160_ADAPT",
+        "display": "160 MHz",
+        "selected": false
+      }
+    ],
+    "label": "Channel bandwidth",
+    "DOMtype": "dropdown"
+  },
+  "iface": {
+    "val": [
+      {
+        "value": "INTERFACE_N",
+        "display": "802.11n",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AC",
+        "display": "802.11ac",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AX",
+        "display": "802.11ax",
+        "selected": true
+      }
+    ],
+    "label": "802.11 protocol version",
+    "DOMtype": "dropdown"
+  },
+  "nss": {
+    "val": "2",
+    "label": "Number of spatial streams"
+  },
+  "ssid": {
+    "val": "Calix_AP",
+    "label": "SSID"
+  },
+  "security": {
+    "label": "Security mode",
+    "val": [
+      {
+        "value": "SECURITY_NONE",
+        "display": "None",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA",
+        "display": "WPA",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA2",
+        "display": "WPA2",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA_WPA2_MIXED",
+        "display": "WPA/2",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3",
+        "display": "WPA3",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3_WPA2_MIXED",
+        "display": "WPA2/3",
+        "selected": true
+      }
+    ],
+    "DOMtype": "dropdown"
+  },
+  "password": {
+    "val": "octoscope",
+    "label": "Security password"
+  },
+  "iperfMode": {
+    "label": "iPerf Mode (tcp, udp)",
+    "val": "tcp"
+  },
+  "trafficType": {
+    "val": "iperf3",
+    "label": "Traffic type to run [iperf2 | iperf3 | ping | None]"
+  },
+  "trafficBW": {
+    "val": "0M",
+    "label": "Bit rate.  Use #K or #M, like 20M for 20 Mbps"
+  },
+  "ulDl": {
+    "label": "Uplink or downlink traffic",
+    "DOMtype": "dropdown",
+    "val": [
+      {
+        "value": "up",
+        "display": "Uplink",
+        "selected": false
+      },
+      {
+        "value": "down",
+        "display": "Downlink",
+        "selected": true
+      }
+    ]
+  },
+  "length": {
+    "val": "",
+    "label": "Packet size, bytes"
+  },
+  "parallel": {
+    "val": "4",
+    "label": "Parallel streams"
+  },
+  "window": {
+    "val": "4M",
+    "label": "Window size"
+  },
+  "dscp": {
+    "val": "0",
+    "label": "DSCP"
+  },
+  "pingPayload": {
+    "val": "64",
+    "label": "Ping payload, bytes"
+  },
+  "PalAsAP": {
+    "val": "*****************************************",
+    "label": "If using the Pal as an AP"
+  },
+  "usePalAsAP": {
+    "val": false,
+    "label": "Check to use Pal as AP"
+  },
+  "palToUseAsAP": {
+    "val": "Pal-6A",
+    "label": "Name of Pal to use as the AP"
+  },
+  "palAsApChannel": {
+    "val": 149,
+    "label": "Set Pal as AP to this channel"
+  },
+  "palAsApSSID": {
+    "val": "palAsAP",
+    "label": "SSID for STAs, override of params_system"
+  },
+  "palAsApSecurity": {
+    "label": "Security mode for STAs, override of params_system",
+    "val": [
+      {
+        "value": "FROM_PARAMS_SYSTEM",
+        "display": "Get from system parameters",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_NONE",
+        "display": "None",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA",
+        "display": "WPA",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA2",
+        "display": "WPA2",
+        "selected": true
+      },
+      {
+        "value": "SECURITY_WPA_WPA2_MIXED",
+        "display": "WPA/2",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3",
+        "display": "WPA3",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3_WPA2_MIXED",
+        "display": "WPA2/3",
+        "selected": false
+      }
+    ],
+    "DOMtype": "dropdown"
+  },
+  "palAsApPassword": {
+    "val": "octoscope",
+    "label": "Security password for STAs, override of params_system"
+  },
+  "enableOFDMA": {
+    "val": false,
+    "label": "Enable or Disable OFDMA on the Pal/AP"
+  },
+  "OTHERPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ANY OTHER ITEM CONFIGURATION SECTION"
+  },
+  "scriptLocation": {
+    "val": [
+      {
+        "value": "server",
+        "display": "On octoBox server",
+        "selected": false
+      },
+      {
+        "value": "scriptMachine",
+        "display": "On a script machine",
+        "selected": true
+      }
+    ],
+    "label": "Script location (server or scriptMachine)",
+    "DOMtype": "dropdown"
+  },
+  "eaLocation": {
+    "val": [
+      {
+        "value": "remote",
+        "display": "Remote",
+        "selected": false
+      },
+      {
+        "value": "local",
+        "display": "Local",
+        "selected": true
+      }
+    ],
+    "label": "Expert Analysis location (remote or local)",
+    "DOMtype": "dropdown"
+  }
+}

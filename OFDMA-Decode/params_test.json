@@ -1,0 +1,438 @@
+{
+  "testName": {
+    "val": "OFDMA-Decode",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "ofdmaDecode",
+    "label": "Prefix for CSV filenames"
+  },
+  "testDescription": {
+    "val": "OFDMA Decode Test \nThis test runs traffic to multiple STAs, checking for OFDMA operation. It first finds AIDs assigned to STAs, then matches AIDs to MAC addresses. \nSniffers (with associated AIDs) are then assigned to each STA.  Traffic is then simultaneously captured from all clients using the complete set of sniffers.",
+    "label": "Test Description"
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "settlingTime": {
+    "val": 2,
+    "label": "Settling Time (seconds)"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to wait before making measurement(sec) [integer]"
+  },
+  "stepDuration": {
+    "val": 15,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "step": {
+    "val": 1,
+    "label": "Quad attenuator step size (dB)"
+  },
+  "quadAttenStart": {
+    "val": 0,
+    "label": "Quad attenuator start value (dB)"
+  },
+  "quadAttenStop": {
+    "val": 0,
+    "label": "Quad attenuator stop value (dB)"
+  },
+  "attensToUse": {
+    "val": [
+      "QA-A",
+      "QA-B"
+    ],
+    "label": "Attenuators to participate in the ramping."
+  },
+  "testUses": {
+    "label": "Instruments required for this test. SD2 format",
+    "val": []
+  },
+  "TESTSETTINGS": {
+    "val": "*****************************************",
+    "label": "TEST SETTINGS"
+  },
+  "scanDuration": {
+    "val": "10",
+    "label": "Length of time for AID, etc. scanning tests"
+  },
+  "rssiLimit": {
+    "val": "-55",
+    "label": "Minimum signal level allowed for detecting a BSSID in findChannelBSSIDs"
+  },
+  "ipNetmask": {
+    "val": "255.255.0.0",
+    "label": "Subnet mask"
+  },
+  "band": {
+    "val": [
+      {
+        "value": "24g",
+        "display": "2.4 GHz",
+        "selected": false
+      },
+      {
+        "value": "5g",
+        "display": "5 GHz",
+        "selected": true
+      },
+      {
+        "value": "5g_2",
+        "display": "5_2 GHz (tri-band 5 GHz #2",
+        "selected": false
+      },
+      {
+        "value": "6g",
+        "display": "6 GHz",
+        "selected": false
+      }
+    ],
+    "label": "Frequency band",
+    "DOMtype": "dropdown"
+  },
+  "primaryChannel": {
+    "val": 36,
+    "label": "Channel of operation"
+  },
+  "bw": {
+    "val": [
+      {
+        "value": "BANDWIDTH_ADAPT",
+        "display": "Adapt",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_20_FIXED",
+        "display": "20 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_40_ADAPT",
+        "display": "40 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_80_ADAPT",
+        "display": "80 MHz",
+        "selected": true
+      },
+      {
+        "value": "BANDWIDTH_160_ADAPT",
+        "display": "160 MHz",
+        "selected": false
+      }
+    ],
+    "label": "Channel bandwidth",
+    "DOMtype": "dropdown"
+  },
+  "iface": {
+    "val": [
+      {
+        "value": "INTERFACE_N",
+        "display": "802.11n",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AC",
+        "display": "802.11ac",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AX",
+        "display": "802.11ax",
+        "selected": true
+      }
+    ],
+    "label": "802.11 standard",
+    "DOMtype": "dropdown"
+  },
+  "nss": {
+    "val": "2",
+    "label": "Number of spatial streams"
+  },
+  "usePalAsAP": {
+    "val": false,
+    "label": "Use a Pal as the AP"
+  },
+  "PalToUseAsAP": {
+    "val": "P7C",
+    "label": "Which Pal to use as the AP"
+  },
+  "PalAPssid": {
+    "val": "palAsAP",
+    "label": "SSID"
+  },
+  "PalAPsecurity": {
+    "label": "Security mode",
+    "val": [
+      {
+        "value": "SECURITY_NONE",
+        "display": "None",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA",
+        "display": "WPA",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA2",
+        "display": "WPA2",
+        "selected": true
+      },
+      {
+        "value": "SECURITY_WPA_WPA2_MIXED",
+        "display": "WPA/2",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3",
+        "display": "WPA3",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3_WPA2_MIXED",
+        "display": "WPA2/3",
+        "selected": false
+      }
+    ],
+    "DOMtype": "dropdown"
+  },
+  "PalAPpassword": {
+    "val": "octoscope",
+    "label": "Security password"
+  },
+  "numSTApals": {
+    "val": 4,
+    "label": "Number of STApals to create/use"
+  },
+  "trafficType": {
+    "label": "Traffic type to run [iperf2 | iperf3 | ping ]",
+    "DOMtype": "dropdown",
+    "val": [
+      {
+        "value": "iperf2",
+        "display": "iperf2",
+        "selected": true
+      },
+      {
+        "value": "iperf3",
+        "display": "iperf3",
+        "selected": false
+      },
+      {
+        "value": "ping",
+        "display": "ping",
+        "selected": false
+      }
+    ]
+  },
+  "iperfMode": {
+    "label": "iPerf Mode (tcp, udp)",
+    "DOMtype": "dropdown",
+    "val": [
+      {
+        "value": "tcp",
+        "display": "tcp",
+        "selected": false
+      },
+      {
+        "value": "udp",
+        "display": "udp",
+        "selected": true
+      }
+    ]
+  },
+  "trafficBW": {
+    "val": "40M",
+    "label": "Bit rate.  Use #K or #M, like 20M for 20 Mbps"
+  },
+  "pingInterval": {
+    "val": 200,
+    "label": "Number of milliseconds between pings"
+  },
+  "ulDl": {
+    "label": "Uplink or downlink traffic",
+    "DOMtype": "dropdown",
+    "val": [
+      {
+        "value": "up",
+        "display": "Uplink",
+        "selected": true
+      },
+      {
+        "value": "dn",
+        "display": "Downlink",
+        "selected": false
+      }
+    ]
+  },
+  "length": {
+    "val": "700",
+    "label": "Packet size, bytes"
+  },
+  "parallel": {
+    "val": "1",
+    "label": "Parallel streams"
+  },
+  "window": {
+    "val": "4M",
+    "label": "Window size"
+  },
+  "trafficAdvanced": {
+    "val": true,
+    "label": "Show advanced traffic pair parameters?"
+  },
+  "useNagles": {
+    "val": false,
+    "label": "Use Nagle's Algorithm? (A TCP optimization that makes the stack wait until all data is acknowledged on a connection before sending more data.)"
+  },
+  "setMss": {
+    "val": 0,
+    "label": "Maximum segment size"
+  },
+  "dscp": {
+    "val": 0,
+    "label": "DSCP"
+  },
+  "isochronous": {
+    "val": false,
+    "label": "Enable isochronous traffic, for iPerf2"
+  },
+  "iso_gap": {
+    "val": 0.005,
+    "label": "Isochronous, inter-packet gap"
+  },
+  "iso_mean": {
+    "val": 2,
+    "label": "Isochronous, mean"
+  },
+  "iso_mean_units": {
+    "label": "Units for isochronous, mean",
+    "val": [
+      {
+        "value": "M",
+        "display": "M",
+        "selected": true
+      },
+      {
+        "value": "K",
+        "display": "K",
+        "selected": false
+      },
+      {
+        "value": "G",
+        "display": "G",
+        "selected": false
+      },
+      {
+        "value": "m",
+        "display": "m",
+        "selected": false
+      },
+      {
+        "value": "k",
+        "display": "k",
+        "selected": false
+      },
+      {
+        "value": "g",
+        "display": "g",
+        "selected": false
+      },
+      {
+        "value": "p",
+        "display": "p",
+        "selected": false
+      }
+    ],
+    "DOMtype": "dropdown"
+  },
+  "iso_stdev": {
+    "val": "2M",
+    "label": "Isochronous, standard deviation"
+  },
+  "iso_fps": {
+    "val": 60,
+    "label": "Isochronous, frames per second"
+  },
+  "sniffmgmt": {
+    "val": false,
+    "label": "True to set sniffer management frames only mode, False to not"
+  },
+  "sniffheader": {
+    "val": false,
+    "label": "True to set sniffer header frames only mode, False to not"
+  },
+  "sniffFilter": {
+    "val": "",
+    "label": "Capture filter expression (Wireshark format)"
+  },
+  "sniffBW": {
+    "val": "80",
+    "label": "Sniffer Radio bandwidth"
+  },
+  "STApalPairs": {
+    "val": [
+      [
+        "L2C",
+        "L4C"
+      ],
+      [
+        "L5C",
+        "L7C"
+      ],
+      [
+        "L10C",
+        "L12C"
+      ],
+      [
+        "L13C",
+        "L15C"
+      ]
+    ],
+    "label": "STA and Sniffer STApal pair names"
+  },
+  "realStaPairs": {
+    "val": [],
+    "label": "Include real STAs in the OFDMA test.\n\n\t\n[\n  {\n    \"alias\": \"L3C_iperf2\",\n    \"IP\": \"192.168.80.27\",\n    \"port\": \"5111\",\n    \"devType\": \"iperf2\",\n    \"sniffer\": \"L6C-STApal\",\n    \"MAC\": \"34:CF:F6:E0:75:54\"\n  }\n]"
+  },
+  "OTHERITEMS": {
+    "val": "*****************************************",
+    "label": "OTHER ITEMS SECTION"
+  },
+  "scriptLocation": {
+    "val": [
+      {
+        "value": "server",
+        "display": "On octoBox server",
+        "selected": false
+      },
+      {
+        "value": "scriptMachine",
+        "display": "On a script machine",
+        "selected": true
+      }
+    ],
+    "label": "Script location (server or scriptMachine)",
+    "DOMtype": "dropdown"
+  },
+  "eaLocation": {
+    "val": [
+      {
+        "value": "remote",
+        "display": "Remote",
+        "selected": false
+      },
+      {
+        "value": "local",
+        "display": "Local",
+        "selected": true
+      }
+    ],
+    "label": "Expert Analysis location (remote or local)",
+    "DOMtype": "dropdown"
+  }
+}

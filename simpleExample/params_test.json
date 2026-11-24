@@ -1,0 +1,341 @@
+{
+  "testName": {
+    "val": "simpleExample",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "simpleExample",
+    "label": "Prefix for CSV filenames"
+  },
+  "testDescription": {
+    "val": "simpleExample Test\n Simple test to set up one traffic pair and one sniffer and run traffic while doing packet capture.\n Illustrates all the basic functions of setting up results file folder and names, setting attenuators, settting up traffic pairs, setting up and associating STA and setting up, starting and stopping sniffing.\n Assumes DUT in Box A. Sniffer and STA STApals in Box C",
+    "label": "Test Description"
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "stepDuration": {
+    "val": 60,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "quadAttenStart": {
+    "val": 0,
+    "label": "Quad attenuator starting value (dB)"
+  },
+  "step": {
+    "val": 5,
+    "label": "Quad attenuator step size (dB). Set = 1 for static attenution."
+  },
+  "quadAttenStop": {
+    "val": 0,
+    "label": "Quad attenuator stopping value (dB) [integer]"
+  },
+  "settlingTime": {
+    "val": 2,
+    "label": "Settling Time (seconds)"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to wait before making measurement(sec) [integer]"
+  },
+  "palToUseSTA": {
+    "val": [
+      {
+        "value": "L2C",
+        "display": "L2C",
+        "selected": true
+      },
+      {
+        "value": "L3C",
+        "display": "L3C",
+        "selected": false
+      },
+      {
+        "value": "L4C",
+        "display": "L4C",
+        "selected": false
+      },
+      {
+        "value": "L5C",
+        "display": "L5C",
+        "selected": false
+      },
+      {
+        "value": "L6C",
+        "display": "L6C",
+        "selected": false
+      },
+      {
+        "value": "L7C",
+        "display": "L7C",
+        "selected": false
+      },
+      {
+        "value": "L2E",
+        "display": "L2E",
+        "selected": false
+      },
+      {
+        "value": "P7C",
+        "display": "Pal-7C",
+        "selected": false
+      }
+    ],
+    "label": "Name of STApal to use for test STA.",
+    "DOMtype": "dropdown"
+  },
+  "testUses": {
+    "label": "Instruments required for this test. SD2 format DO NOT MODIFY!",
+    "val": []
+  },
+  "primaryChannel": {
+    "val": 36,
+    "label": "Channel of operation"
+  },
+  "bw": {
+    "val": [
+      {
+        "value": "BANDWIDTH_ADAPT",
+        "display": "Adapt",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_20_FIXED",
+        "display": "20 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_40_ADAPT",
+        "display": "40 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_80_ADAPT",
+        "display": "80 MHz",
+        "selected": true
+      },
+      {
+        "value": "BANDWIDTH_160_ADAPT",
+        "display": "160 MHz",
+        "selected": false
+      }
+    ],
+    "label": "Channel bandwidth",
+    "DOMtype": "dropdown"
+  },
+  "iface": {
+    "val": [
+      {
+        "value": "INTERFACE_G",
+        "display": "802.11g",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_N",
+        "display": "802.11n (Wi-Fi 4)",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AC",
+        "display": "802.11ac (Wi-Fi 5)",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AX",
+        "display": "802.11ax (Wi-Fi 6)",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_BE",
+        "display": "802.11ax (Wi-Fi 7)",
+        "selected": true
+      }
+    ],
+    "label": "802.11 protocol version",
+    "DOMtype": "dropdown"
+  },
+  "nss": {
+    "val": "2",
+    "label": "Number of spatial streams"
+  },
+  "iperfMode": {
+    "label": "iPerf Mode (tcp, udp)",
+    "val": "tcp"
+  },
+  "trafficType": {
+    "val": "iperf2",
+    "label": "Traffic type to run [iperf2 | iperf3 | ping | None]"
+  },
+  "trafficBW": {
+    "val": "0M",
+    "label": "Bit rate.  Use #K or #M, like 20M for 20 Mbps"
+  },
+  "ulDl": {
+    "label": "Uplink or downlink traffic",
+    "DOMtype": "dropdown",
+    "val": [
+      {
+        "value": "up",
+        "display": "Uplink",
+        "selected": false
+      },
+      {
+        "value": "down",
+        "display": "Downlink",
+        "selected": true
+      }
+    ]
+  },
+  "length": {
+    "val": "",
+    "label": "Packet size, bytes"
+  },
+  "parallel": {
+    "val": "4",
+    "label": "Parallel streams"
+  },
+  "window": {
+    "val": "4M",
+    "label": "Window size"
+  },
+  "pingPayload": {
+    "val": "64",
+    "label": "Ping payload, bytes"
+  },
+  "runPcapAnalysis": {
+    "val": true,
+    "label": "True to sniff and run pcap analysis, False to not"
+  },
+  "palToUseSniffer": {
+    "val": [
+      {
+        "value": "L10C",
+        "display": "L10C",
+        "selected": true
+      },
+      {
+        "value": "L11C",
+        "display": "L11C",
+        "selected": false
+      },
+      {
+        "value": "L12C",
+        "display": "L12C",
+        "selected": false
+      },
+      {
+        "value": "L13C",
+        "display": "L13C",
+        "selected": false
+      },
+      {
+        "value": "L14C",
+        "display": "L14C",
+        "selected": false
+      },
+      {
+        "value": "L15C",
+        "display": "L15C",
+        "selected": false
+      },
+      {
+        "value": "Pal-6C",
+        "display": "Pal-6C",
+        "selected": false
+      },
+      {
+        "value": "Pal-7A",
+        "display": "Pal-7A",
+        "selected": false
+      },
+      {
+        "value": "Pal-7C",
+        "display": "Pal-7C",
+        "selected": false
+      }
+    ],
+    "label": "Name of STApal to use for test sniffer.",
+    "DOMtype": "dropdown"
+  },
+  "snifferBW": {
+    "val": "BANDWIDTH_80_ADAPT",
+    "label": "Bandwidth for the sniffer"
+  },
+  "headersOnly": {
+    "val": true,
+    "label": "Headers-only selected?"
+  },
+  "managementOnly": {
+    "val": false,
+    "label": "Management-only selected?"
+  },
+    "headlessSniffer":{
+	"val":true,
+	"label":"Headless sniffing stores the file on the server.  It does NOT open Wireshark.  It does NOT require SnifferRelay.js to be running."
+    },
+  "OTHERPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ANY OTHER ITEM CONFIGURATION SECTION"
+  },
+  "doSecondCapture": {
+    "val": false,
+    "label": "Generate a second PCAP file as an example of how its done"
+  },
+  "doPDF": {
+    "val": false,
+    "label": "Generate the PDF file at end of test"
+  },
+  "usePalAsAP": {
+    "val": "",
+    "label": "Use this Pal as the AP. If blank, this is not done."
+  },
+  "palAPssid": {
+    "val": "palAsAP",
+    "label": "SSID for Pal as AP"
+  },
+  "palAPsecurity": {
+    "label": "Security mode for Pal as AP",
+    "val": [
+      {
+        "value": "SECURITY_NONE",
+        "display": "None",
+        "selected": true
+      },
+      {
+        "value": "SECURITY_WPA",
+        "display": "WPA",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA2",
+        "display": "WPA2",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA_WPA2_MIXED",
+        "display": "WPA/2",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3",
+        "display": "WPA3",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3_WPA2_MIXED",
+        "display": "WPA2/3",
+        "selected": false
+      }
+    ],
+    "DOMtype": "dropdown"
+  },
+  "palAPpassword": {
+    "val": "octoscope",
+    "label": "Security password for Pal as AP"
+  },
+  "palAPchannel": {
+    "val": 149,
+    "label": "Channel of operation for Pal as AP"
+  }
+}

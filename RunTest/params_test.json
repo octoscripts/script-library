@@ -1,0 +1,38 @@
+{
+  "testName": {
+    "val": "simpleAutomationExample",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "runSimpleExample",
+    "label": "Prefix for CSV filenames"
+  },
+  "testDescription": {
+    "val": "Run a pre-configured test in the database.  E.g. if you created a test using the UI, but want to automate running it over and over.",
+    "label": "Test Description"
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "testDuration": {
+    "val": 30,
+    "label": "How long should this test take?"
+  },
+  "OTHERPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ANY OTHER ITEM CONFIGURATION SECTION"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to wait before making measurement(sec) [integer]"
+  },
+  "stepDuration": {
+    "val": 10,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "step": {
+    "val": 10,
+    "label": "Quad attenuator step size (dB). Set = 1 for static attenution."
+  }    
+}

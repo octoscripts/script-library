@@ -1,0 +1,575 @@
+{
+  "testName": {
+    "val": "anyModeRvR",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "anymodervr",
+    "label": "Prefix for CSV filenames"
+  },
+  "testDescription": {
+    "val": "RvR test that can be run in any supported mode, i.e. RvR, RvRwR, RvOvR and RvRvO.\nUses linear attenuation ramp.\nDUT must be in Box A.",
+    "label": "Test Description"
+  },
+  "runCreateReport": {
+    "val": true,
+    "label": "Set true to run createReport.py for the test."
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "settlingTime": {
+    "val": 2,
+    "label": "Time to ignore test data at the beginning of test. (sec) [integer]"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to ignore test data at start of each attenuator step. (sec) [integer]"
+  },
+  "stepDuration": {
+    "val": 10,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "quadAttenStart": {
+    "val": 0,
+    "label": "Quad attenuator starting value (dB)"
+  },
+  "step": {
+    "val": 3,
+    "label": "Quad attenuator step size (dB)"
+  },
+  "quadAttenStop": {
+    "val": 12,
+    "label": "Quad attenuator stopping value (dB) [integer]"
+  },
+  "palToUse": {
+    "val": [
+      {
+        "value": "P7C",
+        "display": "P7C",
+        "selected": false
+      },
+      {
+        "value": "W1C",
+        "display": "W1C",
+        "selected": false
+      },
+      {
+        "value": "L2C",
+        "display": "L2C",
+        "selected": false
+      },
+      {
+        "value": "L3C",
+        "display": "L3C",
+        "selected": true
+      },
+      {
+        "value": "L4C",
+        "display": "L4C",
+        "selected": false
+      },
+      {
+        "value": "L5C",
+        "display": "L5C",
+        "selected": false
+      },
+      {
+        "value": "L6C",
+        "display": "L6C",
+        "selected": false
+      },
+      {
+        "value": "L7C",
+        "display": "L7C",
+        "selected": false
+      },
+      {
+        "value": "W8C",
+        "display": "W8C",
+        "selected": false
+      },
+      {
+        "value": "W9C",
+        "display": "W9C",
+        "selected": false
+      },
+      {
+        "value": "L10C",
+        "display": "L10C",
+        "selected": false
+      },
+      {
+        "value": "L11C",
+        "display": "L11C",
+        "selected": false
+      },
+      {
+        "value": "L12C",
+        "display": "L12C",
+        "selected": false
+      },
+      {
+        "value": "L13C",
+        "display": "L13C",
+        "selected": false
+      },
+      {
+        "value": "L14C",
+        "display": "L14C",
+        "selected": false
+      },
+      {
+        "value": "L15C",
+        "display": "L15C",
+        "selected": false
+      },
+      {
+        "value": "W16C",
+        "display": "W16C",
+        "selected": false
+      },
+      {
+        "value": "W1E",
+        "display": "W1E",
+        "selected": false
+      },
+      {
+        "value": "L2E",
+        "display": "L2E",
+        "selected": false
+      },
+      {
+        "value": "L3E",
+        "display": "L3E",
+        "selected": false
+      },
+      {
+        "value": "L4E",
+        "display": "L4E",
+        "selected": false
+      },
+      {
+        "value": "iperf2Client",
+        "display": "iperf2 client",
+        "selected": false
+      },
+      {
+        "value": "iperf3Client",
+        "display": "iperf3 client",
+        "selected": false
+      }
+    ],
+    "label": "Pal/STApal to use for test. Can be any STApal in Box C or Box E or Pal6-C",
+    "DOMtype": "dropdown"
+  },
+  "customIP": {
+    "val": "192.168.80.27",
+    "label": "IP address to use if iPerf client"
+  },
+  "customPort": {
+    "val": "5111",
+    "label": "Port to use if iPerf client"
+  },
+  "customAlias": {
+    "val": "L3C_iperf2",
+    "label": "Alias to use if iPerf client"
+  },
+  "rvrMode": {
+    "val": [
+      {
+        "value": "RvR",
+        "display": "RvR",
+        "selected": true
+      },
+      {
+        "value": "RvRwR",
+        "display": "RvRwR",
+        "selected": false
+      },
+      {
+        "value": "RvOvR",
+        "display": "RvOvR",
+        "selected": false
+      },
+      {
+        "value": "RvRvO",
+        "display": "RvRvO",
+        "selected": false
+      }
+    ],
+    "label": "RvR: no rotation during test | RvRwR: rotate DUT 360 degrees at each attenuation step | RvOvR: rotate DUT and test throughput, then change attenutor | RvRvO: run RvR at different DUT rotations ",
+    "DOMtype": "dropdown"
+  },
+  "ttStart": {
+    "val": 0,
+    "label": "Turntable starting position in degrees"
+  },
+  "ttStop": {
+    "val": 0,
+    "label": "Turntable stopping position in degrees"
+  },
+  "ttStep": {
+    "val": 30,
+    "label": "Turntable step size in degrees"
+  },
+  "ttTraining": {
+    "val": 10,
+    "label": "Turntable training interval in seconds.  So, the amount of data you ignore after any turntable position change."
+  },
+  "ttVelocity": {
+    "val": 10,
+    "label": "Turntable velocity [Integer]."
+  },
+  "ENDPOINTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ENDPOINT CONFIGURATION SECTION"
+  },
+  "band": {
+    "val": [
+      {
+        "value": "24g",
+        "display": "2.4 GHz",
+        "selected": false
+      },
+      {
+        "value": "5g",
+        "display": "5 GHz",
+        "selected": true
+      },
+      {
+        "value": "6g",
+        "display": "6 GHz",
+        "selected": false
+      }
+    ],
+    "label": "Frequency band",
+    "DOMtype": "dropdown"
+  },
+  "primaryChannel": {
+    "val": 36,
+    "label": "Channel of operation"
+  },
+  "bw": {
+    "val": [
+      {
+        "value": "BANDWIDTH_ADAPT",
+        "display": "Adapt",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_20_FIXED",
+        "display": "20 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_40_ADAPT",
+        "display": "40 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_80_ADAPT",
+        "display": "80 MHz",
+        "selected": true
+      },
+      {
+        "value": "BANDWIDTH_160_ADAPT",
+        "display": "160 MHz",
+        "selected": false
+      }
+    ],
+    "label": "Channel bandwidth",
+    "DOMtype": "dropdown"
+  },
+  "iface": {
+    "val": [
+      {
+        "value": "INTERFACE_N",
+        "display": "802.11n (Wi-Fi 4)",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AC",
+        "display": "802.11ac (Wi-Fi 5)",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AX",
+        "display": "802.11ax (Wi-Fi 6)",
+        "selected": true
+      }
+    ],
+    "label": "802.11 protocol version",
+    "DOMtype": "dropdown"
+  },
+  "nss": {
+    "val": [
+      {
+        "value": 1,
+        "display": "1 stream",
+        "selected": false
+      },
+      {
+        "value": 2,
+        "display": "2 streams",
+        "selected": true
+      },
+      {
+        "value": 3,
+        "display": "3 streams",
+        "selected": false
+      },
+      {
+        "value": 4,
+        "display": "4 streams",
+        "selected": false
+      },
+      {
+        "value": 5,
+        "display": "5 streams",
+        "selected": false
+      },
+      {
+        "value": 6,
+        "display": "6 streams",
+        "selected": false
+      },
+      {
+        "value": 7,
+        "display": "7 streams",
+        "selected": false
+      },
+      {
+        "value": 8,
+        "display": "8 streams",
+        "selected": false
+      }
+    ],
+    "label": "Number of spatial streams",
+    "DOMtype": "dropdown"
+  },
+  "TRAFFICPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TRAFFIC PAIR CONFIGURATION SECTION"
+  },
+  "trafficType": {
+    "val": "iperf2",
+    "label": "Traffic type to run [iperf2 | iperf3 | ping | None]"
+  },
+  "trafficMode": {
+    "val": [
+      {
+        "value": "tcp",
+        "display": "TCP",
+        "selected": true
+      },
+      {
+        "value": "udp",
+        "display": "UDP",
+        "selected": false
+      },
+      {
+        "value": "ping",
+        "display": "Ping",
+        "selected": false
+      }
+    ],
+    "label": "Traffic type",
+    "DOMtype": "dropdown"
+  },
+  "pingInterval": {
+    "val": 200,
+    "label": "Number of milliseconds between pings"
+  },
+  "upOrDown": {
+    "val": [
+      {
+        "value": "up",
+        "display": "Uplink",
+        "selected": false
+      },
+      {
+        "value": "down",
+        "display": "Downlink",
+        "selected": true
+      }
+    ],
+    "label": "Traffic direction, uplink or downlink",
+    "DOMtype": "dropdown"
+  },
+  "trafficBW": {
+    "val": "500M",
+    "label": "Traffic bandwidth. Use K/M suffix; 0 for unlimited [string]."
+  },
+  "length": {
+    "val": "",
+    "label": "Length field.  This is the packet size, in bytes, for UDP."
+  },
+  "parallel": {
+    "val": 4,
+    "label": "Number of parallel iPerf traffic streams. NOT the same as spatial streams for MIMO."
+  },
+  "window": {
+    "val": "2M",
+    "label": "Window size for iPerf in bytes.  Use #K or #M, like 2M for 2 MBytes."
+  },
+  "trafficAdvanced": {
+    "val": false,
+    "label": "Show advanced traffic pair parameters?"
+  },
+  "useNagles": {
+    "val": false,
+    "label": "Use Nagle's Algorithm? (A TCP optimization that makes the stack wait until all data is acknowledged on a connection before sending more data.)"
+  },
+  "setMss": {
+    "val": 0,
+    "label": "Maximum segment size"
+  },
+  "dscp": {
+    "val": 0,
+    "label": "DSCP"
+  },
+  "isochronous": {
+    "val": false,
+    "label": "Enable isochronous traffic, for iPerf2"
+  },
+  "iso_gap": {
+    "val": 0.005,
+    "label": "Isochronous, inter-packet gap"
+  },
+  "iso_mean": {
+    "val": 10,
+    "label": "Isochronous, mean"
+  },
+  "iso_mean_units": {
+    "label": "Units for isochronous, mean",
+    "val": [
+      {
+        "value": "M",
+        "display": "M",
+        "selected": false
+      },
+      {
+        "value": "K",
+        "display": "K",
+        "selected": false
+      },
+      {
+        "value": "G",
+        "display": "G",
+        "selected": false
+      },
+      {
+        "value": "m",
+        "display": "m",
+        "selected": true
+      },
+      {
+        "value": "k",
+        "display": "k",
+        "selected": false
+      },
+      {
+        "value": "g",
+        "display": "g",
+        "selected": false
+      },
+      {
+        "value": "p",
+        "display": "p",
+        "selected": false
+      }
+    ],
+    "DOMtype": "dropdown"
+  },
+  "iso_stdev": {
+    "val": "0",
+    "label": "Isochronous, standard deviation"
+  },
+  "iso_fps": {
+    "val": 1000,
+    "label": "Isochronous, frames per second"
+  },
+  "PAL_AP_PARAMETERS": {
+    "val": "*****************************************",
+    "label": "CONFIGURATION IF PAL USED AS AP SECTION"
+  },
+  "usePalAsAP": {
+    "val": false,
+    "label": "Use Pal as AP?"
+  },
+  "palToUseAsAP": {
+    "val": "Pal-6A",
+    "label": "If using Pal as AP, Pal to use."
+  },
+  "palToUseAsAPBand": {
+    "val": [
+      {
+        "value": "24g",
+        "display": "2.4 GHz",
+        "selected": false
+      },
+      {
+        "value": "5g",
+        "display": "5 GHz",
+        "selected": true
+      },
+      {
+        "value": "6g",
+        "display": "6 GHz",
+        "selected": false
+      }
+    ],
+    "label": "If using Pal as AP, band of operation.",
+    "DOMtype": "dropdown"
+  },
+  "palToUseAsAPChannel": {
+    "val": 149,
+    "label": "If using Pal as AP, channel of operation."
+  },
+  "palToUseAsAPSSID": {
+    "val": "PalUsedAsAP",
+    "label": "If using Pal as AP, SSID."
+  },
+  "palToUseAsAPPassword": {
+    "val": "octoscope",
+    "label": "If using Pal as AP, password."
+  },
+  "palToUseAsAPSecurity": {
+    "label": "If using Pal as AP, security mode",
+    "val": [
+      {
+        "value": "SECURITY_NONE",
+        "display": "None",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA",
+        "display": "WPA",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA2",
+        "display": "WPA2",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA_WPA2_MIXED",
+        "display": "WPA/2",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3",
+        "display": "WPA3",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3_WPA2_MIXED",
+        "display": "WPA2/3",
+        "selected": true
+      }
+    ],
+    "DOMtype": "dropdown"
+  }
+}

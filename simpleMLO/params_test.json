@@ -1,0 +1,194 @@
+{
+  "testName": {
+    "val": "simpleMLO",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "simpleMLO",
+    "label": "Prefix for CSV filenames"
+  },
+  "testDescription": {
+    "val": "The most basic setup for an MLO STA (and AP, if Pal is being used.",
+    "label": "Test Description"
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "settlingTime": {
+    "val": 2,
+    "label": "Settling Time (seconds)"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to wait before making measurement(sec) [integer]"
+  },
+  "step": {
+    "val": 2,
+    "label": "Quad attenuator step size (dB). Set = 1 for static attenution."
+  },
+  "stepDuration": {
+    "val": 30,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "quadAttenStart": {
+    "val": 30,
+    "label": "Attenuation start"
+  },
+  "quadAttenStop": {
+    "val": 30,
+    "label": "Attenuation stop"
+  },
+  "INSTRUMENT SETUP": {
+    "val": "*****************************************",
+    "label": "INSTRUMENT SETUP"
+  },
+  "palToUse": {
+    "val": "palBox-I15-SP7",
+    "label": "Pal to Use"
+  },
+  "mloConfig_STA": {
+    "val": {
+      "credentials": {
+        "ssid": "tplink-MLO",
+        "security": "SECURITY_WPA3",
+        "password": "octoscope12"
+      },
+      "bands": {
+        "24g": {
+          "member": false,
+          "channel": 6,
+          "bandwidth": "BANDWIDTH_40_ADAPT",
+          "streams": 4
+        },
+        "5g": {
+          "member": true,
+          "channel": 100,
+          "bandwidth": "BANDWIDTH_160_ADAPT",
+          "streams": 4
+        },
+        "6g": {
+          "member": true,
+          "channel": 117,
+          "bandwidth": "BANDWIDTH_160_ADAPT",
+          "streams": 4
+        }
+      },
+      "interface": "INTERFACE_BE"
+    },
+    "label": "MLO configuration for the STA"
+  },
+  "iface": {
+    "val": [
+      {
+        "value": "INTERFACE_BE",
+        "display": "802.11be (Wi-Fi 7)",
+        "selected": true
+      }
+    ],
+    "label": "802.11 protocol version",
+    "DOMtype": "dropdown"
+  },
+  "nss": {
+    "val": "4",
+    "label": "Number of spatial streams"
+  },
+  "attensToUse": {
+    "val": [
+      "QA-A",
+      "QA-B"
+    ],
+    "label": "List of attenuators to use"
+  },
+  "IPSTREAMDEFAULTS": {
+    "val": "*****************************************",
+    "label": "IP STREAM DEFAULTS"
+  },
+  "ulDl": {
+    "label": "Uplink or downlink traffic",
+    "DOMtype": "dropdown",
+    "val": [
+      {
+        "value": "up",
+        "display": "Uplink",
+        "selected": false
+      },
+      {
+        "value": "down",
+        "display": "Downlink",
+        "selected": true
+      }
+    ]
+  },
+  "iperfMode": {
+    "label": "iPerf Mode (tcp, udp)",
+    "val": "tcp"
+  },
+  "trafficType": {
+    "val": "iperf2",
+    "label": "Traffic type to run [iperf2 | iperf3 | ping | None]"
+  },
+  "trafficBW": {
+    "val": "0M",
+    "label": "Bit rate.  Use #K or #M, like 20M for 20 Mbps"
+  },
+  "parallel": {
+    "val": "4",
+    "label": "Parallel streams"
+  },
+  "window": {
+    "val": "4M",
+    "label": "Window size"
+  },
+  "length": {
+    "val": "",
+    "label": "Packet size, bytes"
+  },
+  "OTHERPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ANY OTHER ITEM CONFIGURATION SECTION"
+  },
+  "totalTests": {
+    "val": 1,
+    "label": "Total number of tests to run.  It will run at least once, regardless of this value."
+  },
+  "staInlineSniffing": {
+    "val": true,
+    "label": "Set up the STA side for inline sniffing?"
+  },
+  "usePalAsAP": {
+    "val": "",
+    "label": "Use this Pal as the AP. If blank, this is not done."
+  },
+  "mloConfig_AP": {
+    "val": {
+      "credentials": {
+        "ssid": "PalAsAP",
+        "security": "SECURITY_WPA3",
+        "password": "octoscope"
+      },
+      "bands": {
+        "24g": {
+          "member": false,
+          "channel": 6,
+          "bandwidth": "BANDWIDTH_40_ADAPT",
+          "streams": 4
+        },
+        "5g": {
+          "member": true,
+          "channel": 100,
+          "bandwidth": "BANDWIDTH_160_ADAPT",
+          "streams": 4
+        },
+        "6g": {
+          "member": true,
+          "channel": 117,
+          "bandwidth": "BANDWIDTH_160_ADAPT",
+          "streams": 4
+        }
+      },
+      "interface": "INTERFACE_BE"
+    },
+    "label": "MLO configuration for the AP"
+  }
+}

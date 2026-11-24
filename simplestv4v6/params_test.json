@@ -1,0 +1,286 @@
+{
+  "testName": {
+    "val": "simplestv4v6",
+    "label": "Test Name"
+  },
+  "testPrefix": {
+    "val": "simplest",
+    "label": "Prefix for CSV filenames"
+  },
+  "testDescription": {
+    "val": "Minimal params_test.json required for the simplest automated test.  Uses IPv6 addressing.",
+    "label": "Test Description"
+  },
+  "TESTPARAMETERS": {
+    "val": "*****************************************",
+    "label": "TEST PARAMETERS SECTION"
+  },
+  "settlingTime": {
+    "val": 2,
+    "label": "Settling Time (seconds)"
+  },
+  "trainingInterval": {
+    "val": 5,
+    "label": "Time to wait before making measurement(sec) [integer]"
+  },
+  "step": {
+    "val": 20,
+    "label": "Quad attenuator step size (dB). Set = 1 for static attenution."
+  },
+  "stepDuration": {
+    "val": 10,
+    "label": "How long to spend at each attenuation step (seconds)."
+  },
+  "quadAttenStart": {
+    "val": 0,
+    "label": "Attenuation start"
+  },
+  "quadAttenStop": {
+    "val": 80,
+    "label": "Attenuation stop"
+  },
+  "INSTRUMENT SETUP": {
+    "val": "*****************************************",
+    "label": "INSTRUMENT SETUP"
+  },
+  "palToUse": {
+    "val": "L3E-STApal",
+    "label": "Pal to Use"
+  },
+  "primaryChannel": {
+    "val": 36,
+    "label": "PrimaryChannel"
+  },
+  "band": {
+    "val": [
+      {
+        "value": "24g",
+        "display": "2.4 GHz",
+        "selected": false
+      },
+      {
+        "value": "5g",
+        "display": "5 GHz (A)",
+        "selected": true
+      },
+      {
+        "value": "5g_2",
+        "display": "5 GHz (B)",
+        "selected": false
+      },
+      {
+        "value": "6g",
+        "display": "6 GHz",
+        "selected": false
+      }
+    ],
+    "label": "Band of operation",
+    "DOMtype": "dropdown"
+  },
+  "bw": {
+    "val": [
+      {
+        "value": "BANDWIDTH_ADAPT",
+        "display": "Adapt",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_20_FIXED",
+        "display": "20 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_40_ADAPT",
+        "display": "40 MHz",
+        "selected": true
+      },
+      {
+        "value": "BANDWIDTH_80_ADAPT",
+        "display": "80 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_160_ADAPT",
+        "display": "160 MHz",
+        "selected": false
+      },
+      {
+        "value": "BANDWIDTH_320_ADAPT",
+        "display": "320 MHz",
+        "selected": false
+      }
+    ],
+    "label": "Channel bandwidth",
+    "DOMtype": "dropdown"
+  },
+  "iface": {
+    "val": [
+      {
+        "value": "INTERFACE_G",
+        "display": "802.11g",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_N",
+        "display": "802.11n (Wi-Fi 4)",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AC",
+        "display": "802.11ac (Wi-Fi 5)",
+        "selected": false
+      },
+      {
+        "value": "INTERFACE_AX",
+        "display": "802.11ax (Wi-Fi 6)",
+        "selected": true
+      },
+      {
+        "value": "INTERFACE_BE",
+        "display": "802.11be (Wi-Fi 7)",
+        "selected": false
+      }
+    ],
+    "label": "802.11 protocol version",
+    "DOMtype": "dropdown"
+  },
+  "nss": {
+    "val": "4",
+    "label": "Number of spatial streams"
+  },
+  "attensToUse": {
+    "val": [
+      "QJ-34"
+    ],
+    "label": "List of attenuators to use"
+  },
+  "IPSTREAMDEFAULTS": {
+    "val": "*****************************************",
+    "label": "IP STREAM DEFAULTS"
+  },
+  "ulDl": {
+    "label": "Uplink or downlink traffic",
+    "DOMtype": "dropdown",
+    "val": [
+      {
+        "value": "up",
+        "display": "Uplink",
+        "selected": false
+      },
+      {
+        "value": "down",
+        "display": "Downlink",
+        "selected": true
+      }
+    ]
+  },
+  "iperfMode": {
+    "label": "iPerf Mode (tcp, udp)",
+    "val": "tcp"
+  },
+  "trafficType": {
+    "val": "iperf2",
+    "label": "Traffic type to run [iperf2 | iperf3 | ping | None]"
+  },
+  "trafficBW": {
+    "val": "500M",
+    "label": "Bit rate.  Use #K or #M, like 20M for 20 Mbps"
+  },
+  "parallel": {
+    "val": "1",
+    "label": "Parallel streams"
+  },
+  "window": {
+    "val": "4M",
+    "label": "Window size"
+  },
+  "length": {
+    "val": "",
+    "label": "Packet size, bytes"
+  },
+  "ipMode": {
+    "label": "IPv4, IPv6(LL)",
+    "DOMtype": "dropdown",
+    "val": [
+      {
+        "value": "ipv4",
+        "display": "IPv4",
+        "selected": false
+      },
+      {
+        "value": "ipv6",
+        "display": "IPv6",
+        "selected": true
+      },
+      {
+        "value": "ipv6LL",
+        "display": "IPv6 local link",
+        "selected": false
+      }
+    ]
+  },
+  "OTHERPARAMETERS": {
+    "val": "*****************************************",
+    "label": "ANY OTHER ITEM CONFIGURATION SECTION"
+  },
+  "totalTests": {
+    "val": 1,
+    "label": "Total number of tests to run.  It will run at least once, regardless of this value."
+  },
+  "usePalAsAP": {
+    "val": "",
+    "label": "Use this Pal as the AP. If blank, this is not done."
+  },
+  "usePalAPasEndpoint": {
+    "val": false,
+    "label": "If you use the Pal as AP, indicate if it is the multiPerf endpoint or not."
+  },
+  "palAPssid": {
+    "val": "palAsAP",
+    "label": "SSID for Pal as AP"
+  },
+  "palAPsecurity": {
+    "label": "Security mode for Pal as AP",
+    "val": [
+      {
+        "value": "SECURITY_NONE",
+        "display": "None",
+        "selected": true
+      },
+      {
+        "value": "SECURITY_WPA",
+        "display": "WPA",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA2",
+        "display": "WPA2",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA_WPA2_MIXED",
+        "display": "WPA/2",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3",
+        "display": "WPA3",
+        "selected": false
+      },
+      {
+        "value": "SECURITY_WPA3_WPA2_MIXED",
+        "display": "WPA2/3",
+        "selected": false
+      }
+    ],
+    "DOMtype": "dropdown"
+  },
+  "palAPpassword": {
+    "val": "octoscope",
+    "label": "Security password for Pal as AP"
+  },
+  "palAPchannel": {
+    "val": 149,
+    "label": "Channel of operation for Pal as AP"
+  }
+}
